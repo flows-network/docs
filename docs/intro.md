@@ -2,46 +2,29 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# WasmHaiku Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+WasmHaiku is a Serverless functions platform for SaaS.
 
-## Getting Started
+## The traditional way to custom SaaS
 
-Get started by **creating a new site**.
+It is common practice for a SaaS platform to provide an API for developers and customers to extend its core functionalities. Think custom plugins for JIRA or chatbots on Slack. 
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+However, the traditional RESTful API approach typically requires the developer to set up a server to receive and respond to events from the SaaS platform. For example, in a Slack chatbot app, the developer need to set up a server to listen to messages sent to the bot, and then to send the bot’s response back to Slack. That is tedious and expensive for the developer.
 
-### What you'll need
+## Serverless way to custom SaaS 
+With the advancement of serverless computing, especially lightweight serverless functions enabled by new runtimes such as [WebAssembly](https://github.com/WasmEdge/WasmEdge), it is now possible to embed reactive functions directly into a SaaS platform without creating any new servers. That's why WasmHaiku comes from.
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+With WasmHaiku, you could
 
-## Generate a new site
+* 🙅 Say no to DevOps work
 
-Generate a new Docusaurus site using the **classic template**.
+* ✅ Only care about the business logic
 
-The classic template will automatically be added to your project after you run the command:
+* 🦀 Write serverless functions in Rust and JavaScript
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+* 🛠️ Integrate kinds of SaaS you love
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+* 💰 Save money 
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Next, I will walk you through a quick start guide with WasmHaiku. Let's go.

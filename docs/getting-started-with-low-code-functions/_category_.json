@@ -1,0 +1,8 @@
+{
+  "label": "Getting Started with Low code functions",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Write serverless functions in Rust to custom SaaS."
+  }
+}
