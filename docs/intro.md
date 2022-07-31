@@ -2,29 +2,16 @@
 sidebar_position: 1
 ---
 
-# WasmHaiku Intro
+# Introducing WasmHaiku
 
-WasmHaiku is a Serverless functions platform for SaaS.
+WasmHaiku is a serverless function platform for SaaS. It makes SaaS more programmable and more customizable. Instead of creating webhook servers to interact with web APIs, WasmHaiku developers can create and upload simple functions (flow functions), written in Rust or JavaScript, to handle SaaS events and to make further API calls based on one's own business logic. A flow function can connect together multiple SaaS to create customized workflows.
 
-## The traditional way to custom SaaS
+🙅 No need to setup and maintain servers. Just upload serverless flow functions! \
+✅ Focus on the business logic instead of integration logic (e.g., authentication and message parsing) \
+🦀 Write serverless flow functions in Rust or JavaScript \
+⚙️ Use language native APIs (in SDKs) instead of web APIs \
+⚡ Much faster and safer than web APIs \
+🛠️ Integrate with any SaaS you love \
+💰 Save money 
 
-It is a common practice for a SaaS platform to provide an API for developers and customers to extend its core functionalities. Think of custom plugins for JIRA or chatbots on Slack. 
-
-However, the traditional RESTful API approach typically requires the developer to set up a server to receive and respond to events from the SaaS platform. For example, in a Slack chatbot app, a developer needs to set up a server to listen to messages sent to the bot, and then send the bot’s response back to Slack. That is tedious and expensive for the developer.
-
-## A serverless way to custom SaaS 
-With the advancement of serverless computing, especially lightweight serverless functions enabled by new runtimes such as [WebAssembly](https://github.com/WasmEdge/WasmEdge), it is now possible to embed reactive functions directly into a SaaS platform without creating any new servers. That's where WasmHaiku comes in.
-
-With WasmHaiku, you can
-
-* 🙅 Say no to long-winded DevOps
-
-* ✅ Only care about the business logic
-
-* 🦀 Write serverless functions in Rust and JavaScript
-
-* 🛠️ Integrate various SaaS you love
-
-* 💰 Save money 
-
-Next, I will walk you through a quick start guide with WasmHaiku. Let's go.
+Next, I will walk you through a flow function that sends new issues in a GitHub repo to your team's Slack channel. It showscases WasmHaiku flow function's ability to respond to a SaaS event (i.e., new issues in the GitHub repo) and to perform new SaaS actions (i.e., posting a Slack message). The flow functions are written by SaaS users, and uploaded to WasmHaiku as serverless functions. They can be triggered by SaaS or timer events.
