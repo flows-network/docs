@@ -71,7 +71,7 @@ const config = {
           // },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/second-state/reactor-wasm',
+            href: 'https://github.com/second-state/flow-functions',
             label: 'Flow Functions',
             position: 'right',
           },
