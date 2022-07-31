@@ -99,11 +99,11 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/',
+                href: 'https://discord.gg/TrPfq677au',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/',
+                href: 'https://twitter.com/realwasmedge',
               },
             ],
           },
@@ -112,11 +112,11 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                href: 'https://medium.com',
+                href: 'https://wasmedge.org/',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/',
+                href: 'https://github.com/second-state/flow-functions',
               },
             ],
           },
