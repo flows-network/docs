@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# Quick start with WasmHaiku
+# Quick start in JavaScript
 
 This article is a step-by-step guide to help users create their first flow on WasmHaiku. In this chapter, you will learn how to create a flow in 5 mins.
 
