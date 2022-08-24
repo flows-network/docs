@@ -89,8 +89,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Intro',
-                to: '/docs/intro',
+                label: 'Rust Developers',
+                to: '/docs/category/rust-developers',
+              },
+              {
+                label: 'Javascript Developers',
+                to: '/docs/category/javascript-developers',
               },
             ],
           },
