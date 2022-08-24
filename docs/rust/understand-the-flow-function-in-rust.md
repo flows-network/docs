@@ -80,7 +80,7 @@ $ ls ../../../target/wasm32-wasi/release/*wasm
 
 After that, you can upload the `getting_started.wasm` file to the WasmHaiku flow as shown in Getting Started.
 
-## Customize it!
+## Create your own
 
 Now you can add your own logic to the flow function. Here are some examples and ideas to get you started.
 
