@@ -1,0 +1,8 @@
+{
+  "label": "Rust Developers",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "5 minutes to create your first flow in Rust."
+  }
+}
