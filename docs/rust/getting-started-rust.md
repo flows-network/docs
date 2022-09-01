@@ -62,7 +62,7 @@ You are done with the outbound connector now! If someone comments on any issue i
 
 In this tutorial, we will first upload a simple flow function. It just parses the event message from GitHub, and then creates a message for the Slack API. If you are interested in learning how the code works, please go to the Customize the flow function section.
 
-[Download the pre-made wasm file](https://github.com/second-state/flow-functions/blob/main/getting-started/getting_started.wasm) on your own computer. Click on the **Select an Attachmen****t** to upload the wasm file.
+[Download the pre-made wasm file](https://github.com/second-state/flow-functions/blob/main/getting-started/getting_started.wasm) on your own computer. Click on the **Select an Attachment** to upload the wasm file.
 
 ![](getting-started-02.jpg)
 
