@@ -76,8 +76,8 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/second-state/reactor-connector-rs',
-            label: 'Connectors',
+            href: 'https://wasmhaiku.com/',
+            label: 'Create a Flow',
             position: 'right',
           },
         ],
