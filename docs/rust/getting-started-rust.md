@@ -7,7 +7,7 @@ sidebar_position: 1
 It only takes minutes to create a WasmHaiku flow function that ties together multiple SaaS services to create a customized business application. It is much easier than creating custom webhook servers and client applications to interact with those SaaS web APIs manually! 
 
 
-> To learn the basic concepts and technical architecture of WasmHaiku, please see the [What is a Flow](/reference-guides/what-is-a-flow.md) chapter.
+> To learn the basic concepts and technical architecture of WasmHaiku, please see the [What is a Flow](/concepts/what-is-a-flow.md) chapter.
 
 
 
