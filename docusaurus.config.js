@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'WasmHaiku Docs',
+  title: 'flows.network Docs',
   tagline: '',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -76,7 +76,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://wasmhaiku.com/',
+            href: 'https://flows.network/',
             label: 'Create a Flow',
             position: 'right',
           },
@@ -125,7 +125,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} WasmHaiku. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} flows.network. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

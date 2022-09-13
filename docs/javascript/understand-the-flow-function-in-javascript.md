@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Understand the flow function
 
-An important feature of WasmHaiku is that its SaaS API flows are programmable. For example, in the Getting Started example, we could write code in the flow function to transform and filter the event received from GitHub, and construct a customized message for Slack.
+An important feature of flows.network is that its SaaS API flows are programmable. For example, in the Getting Started example, we could write code in the flow function to transform and filter the event received from GitHub, and construct a customized message for Slack.
 
 Let’s first review the simple wasm flow function we published for the [Getting Started guide](getting-started-javascript.md). It is written in [JavaScript](https://github.com/second-state/flow-functions/tree/main/getting-started/javascript). The Rust version of this flow function can be found here. The flow is triggered when someone comments on an issue on the connected GitHub repo. The flow function takes the GitHub event message as the input argument, and parses important data fields, such as `action` and `comment`, from the message.
 
@@ -41,7 +41,7 @@ Then, the flow function constructs and returns a new message for the Slack API. 
 ```
 
 
-You can upload the `getting_started.js` file to the WasmHaiku flow as shown in Getting Started.
+You can upload the `getting_started.js` file to the flows.network flow as shown in Getting Started.
 
 
 ## Create your own

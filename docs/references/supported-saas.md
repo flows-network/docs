@@ -3,14 +3,14 @@ sidebar_position: 1
 ---
 # Supported SaaS
 
-You will find a complete SaaS list supported by WasmHaiku, which means you could use WasmHaiku to customize the workflows across these SaaS. 
+You will find a complete SaaS list supported by flows.network, which means you could use flows.network to customize the workflows across these SaaS. 
 
 Don't find the SaaS you frequently use? Let us know by filling out [this Feature Request Form](https://forms.gle/HYB5QU41fL7xsPnB9). 
 
-> BTW, We will respond to you soon because we will get an alert in the Slack channel if you submit the form through WasmHaiku. 
+> BTW, We will respond to you soon because we will get an alert in the Slack channel if you submit the form through flows.network. 
  
 ## Inbound Connectors
-WasmHaiku now supports GitHub, Slack, and Cloudinary as inbound connectors.
+flows.network now supports GitHub, Slack, and Cloudinary as inbound connectors.
 
 | SaaS       | Type    | API Docs                                                                                       |
 |------------|---------|------------------------------------------------------------------------------------------------|
@@ -21,7 +21,7 @@ WasmHaiku now supports GitHub, Slack, and Cloudinary as inbound connectors.
 
 ## Outbound Connectors
 
-WasmHaiku now supports GitHub, Slack, Notion, Sendgrid, Twilio, and Cloudinary as outbound connectors.
+flows.network now supports GitHub, Slack, Notion, Sendgrid, Twilio, and Cloudinary as outbound connectors.
 
 | SaaS       | Type     | API Docs                                                                              |
 |------------|----------|---------------------------------------------------------------------------------------|
