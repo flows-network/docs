@@ -57,7 +57,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'WasmHaiku Docs',
+        title: 'flows.network Docs',
         logo: {
           alt: '',
           src: 'img/logo.svg',
