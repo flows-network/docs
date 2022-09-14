@@ -60,7 +60,7 @@ const config = {
         title: 'flows.network Docs',
         logo: {
           alt: '',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           // {
