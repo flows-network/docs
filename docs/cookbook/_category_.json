@@ -1,0 +1,8 @@
+{
+  "label": "Cookbook",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Ready-to-use recipes, code templates, and inspirations from our examples."
+  }
+}
