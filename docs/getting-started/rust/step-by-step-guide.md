@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
 ---
-# Getting started
+
+# 🦀 Step by Step Guide in Rust
 
 It only takes minutes to create a flows.network flow function that ties together multiple SaaS services to create a customized business application. It is much easier than creating custom webhook servers and client applications to interact with those SaaS web APIs manually! 
 
@@ -14,7 +15,7 @@ It only takes minutes to create a flows.network flow function that ties together
 
 Let’s say that you are a maintainer of an open source project hosted on GitHub. The project’s volunteer developers are busy but they are all in a Slack channel. Since no one really pays attention to their GitHub notification emails, you would like to make sure that important GitHub issue comments are also sent to the Slack channel.
 
-flows.network enables you to create this automated workflow with ease. But more importantly, it allows you to write software programs to customize this workflow for your own business needs. For example, your function could have logic to decide which issue comments need to be sent to Slack. Now, let's get started with a simple flow function in flows.network to understand how it works.
+flows.network enables you to create this automated workflow with ease. But more importantly, it allows you to write software programs to customize this workflow for your own business needs. For example, your function could have logic to decide which **issue comments need to be sent to Slack**. Now, let's get started with a simple flow function in flows.network to understand how it works.
 
 
 ## Before you start
@@ -38,6 +39,7 @@ Click on the **Select an App**, and you will see a list of SaaS that flows.netwo
 
 ![](getting-started-01.jpg)
 
+
 In the next several screens, GitHub will ask you to authorize flows.network to access your account, and then you will choose which GitHub API events flows.network will accept (i.e, issue comment events). If you are uncertain, please watch the 1-minute video walk-through below. 
 
 ![](inbound.gif)
@@ -60,7 +62,7 @@ You are done with the outbound connector now! If someone comments on any issue i
 
 In this tutorial, we will first upload a simple flow function. It just parses the event message from GitHub, and then creates a message for the Slack API. If you are interested in learning how the code works, please go to the Customize the flow function section.
 
-[Download the pre-made JavaScript file](https://github.com/second-state/flow-functions/tree/main/getting-started/javascript) on your own computer. Click on the **Select an Attachment** to upload the JavaScript file.
+[Download the pre-made wasm file](https://github.com/second-state/flow-functions/blob/main/getting-started/getting_started.wasm) on your own computer. Click on the **Select an Attachment** to upload the wasm file.
 
 ![](getting-started-02.jpg)
 

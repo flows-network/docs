@@ -27,7 +27,7 @@ A software development team uses GitHub for code repository and JIRA for issue t
 We can create a flow function on flows.network. It is triggered by a Github PR event, and then sends its responses back to the PR. 
  
 
-> I assumed that you have basic knowledge of the concepts of the flows.network. If not, please check out [Getting started with Rust](https://docs.flows.network/docs/rust/getting-started-rust) first.
+> I assumed that you have basic knowledge of the concepts of the flows.network. If not, please check out [Getting Started](/docs/category/getting-started)  first.
 
 
 We select GitHub as the inbound connector and authenticate it's access to flows.network. It is triggered by “activity related to pull requests”. The following figure shows how to configure the inbound connector on flows.network. 

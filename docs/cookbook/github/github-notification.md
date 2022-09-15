@@ -25,7 +25,7 @@ So, our use case is to automatically forward all `bug` labeled issues to the `#b
 We could create an automated workflow on flows.network that sending GitHub issues with `bug` label to Slack #bugs channel.
 
 
-> I assumed that you have basic knowledge of the concepts of the flows.work. If not, please check out [Getting started with Rust](https://docs.flows.network/docs/rust/getting-started-rust) or [JavaScript](https://docs.flows.network/docs/category/javascript-developers) first.
+> I assumed that you have basic knowledge of the concepts of the flows.work. If not, please check out [Getting Started](/docs/category/getting-started) first.
 
 
 We select GitHub as the inbound connector and authenticate it's access to flows.network. It is triggered by “activity related to an issue”. The following figure shows how to configure the inbound connector on flows.network. 
