@@ -6,7 +6,7 @@ sidebar_position: 2
 
 An important feature of flows.network is that its SaaS API flows are programmable. For example, in the Getting Started example, we could write code in the flow function to transform and filter the event received from GitHub, and construct a customized message for Slack.
 
-Let’s first review the simple wasm flow function we published for the [Getting Started guide](getting-started-javascript.md). It is written in [JavaScript](https://github.com/second-state/flow-functions/tree/main/getting-started/javascript). The Rust version of this flow function can be found here. The flow is triggered when someone comments on an issue on the connected GitHub repo. The flow function takes the GitHub event message as the input argument, and parses important data fields, such as `action` and `comment`, from the message.
+Let’s first review the simple wasm flow function we published for the [Getting Started guide](step-by-step-guide.md). It is written in [JavaScript](https://github.com/second-state/flow-functions/tree/main/getting-started/javascript). The Rust version of this flow function can be found here. The flow is triggered when someone comments on an issue on the connected GitHub repo. The flow function takes the GitHub event message as the input argument, and parses important data fields, such as `action` and `comment`, from the message.
 
 
 ```
