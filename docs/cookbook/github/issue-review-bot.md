@@ -38,6 +38,7 @@ The outbound connector is GitHub as well. The action is to create a comment and/
 
 Next, upload the Rust serverless function to validate the issue title against our triage rules. [The complete code](https://github.com/second-state/flow-functions/tree/main/github/github/issue-review-notifier/rust) is on GitHub. 
 
+> The Rust code needs to be complied to Wasm file before uploading. Refer to [this article](https://docs.flows.network/docs/getting-started/rust/understand-the-flow-function-in-rust) for more details.
 
 ```
     if is_compliant {

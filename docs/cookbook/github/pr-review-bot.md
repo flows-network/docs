@@ -40,6 +40,8 @@ The outbound connector is GitHub as well. The action is to create a comment and/
 
 Next, upload the Rust serverless function to check if the PR title includes a valid JIRA ID. [The complete code](https://github.com/second-state/flow-functions/tree/main/github/github/check-jira-id/rust) is on GitHub. It uses regular expressions to match the pattern for valid JIRA IDs. 
 
+> The Rust code needs to be complied to Wasm file before uploading. Refer to [this article](https://docs.flows.network/docs/getting-started/rust/understand-the-flow-function-in-rust) for more details.
+
 ```
 // The PR title should be three letters-numbers description.
  let re = Regex::new(r"^[A-Za-z]{3}-\d+").unwrap();
