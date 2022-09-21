@@ -9,7 +9,7 @@ For many software developers, being bombarded by email notifications from GitHub
 
 GitHub bots can filter GitHub Issues notifications based on criteria such as labels, assignees and comments. It could then send those filtered notifications to different Slack channels instead of an email address. However, the traditional approach to create a GitHub bot requires developers to set up a webhook server and to interact with the GitHub web API directly (eg to explicitly authenticate every request).
 
-Flows.network provides a serverless platform for developers to create SaaS automations and bots. You can simply upload the issue filtering logic in a function. In this tutorial, I will give a concrete example in JavaScript. 
+[Flows.network](https://flows.network/) provides a serverless platform for developers to create SaaS automations and bots. You can simply upload the issue filtering logic in a function. In this tutorial, I will give a concrete example in JavaScript. 
 
 
 ### The use case
