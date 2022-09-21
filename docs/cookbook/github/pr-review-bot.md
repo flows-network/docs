@@ -10,7 +10,7 @@ Since code owners, reviewers, and fellow developers spend so much on reviewing P
 
 GitHub bots can automate the PR review workflow and improve the team’s productivity and code quality. However, the traditional approach to create a GitHub bot requires developers to set up a webhook server and to interact with the GitHub web API directly (eg to explicitly authenticate every request).
 
-Flows.network provides a serverless platform for developers to create github bots. You can simply upload the PR review logic in a function. In this tutorial, I will give a concrete example in Rust. 
+[Flows.network](https://flows.network/) provides a serverless platform for developers to create github bots. You can simply upload the PR review logic in a function. In this tutorial, I will give a concrete example in Rust. 
 
 
 ### The use case
