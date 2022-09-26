@@ -71,7 +71,7 @@ const config = {
           // },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/second-state/flow-functions',
+            href: 'https://github.com/flows-network/flow-functions',
             label: 'Flow Functions',
             position: 'right',
           },
@@ -120,7 +120,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/second-state/flow-functions',
+                href: 'https://github.com/flows-network/',
               },
             ],
           },
