@@ -1,8 +1,8 @@
 {
-  "label": "References",
+  "label": "SaaS References",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "Learn more about flows.network Platform."
+    "description": "API references about SaaS Integrations."
   }
 }
