@@ -14,9 +14,10 @@ Before we start, let's go through the process of automating your workflows.
 * Action: What will happen if the trigger is triggered. It's usually another SaaS event like send a new message to Slack/Discord/Telegram, create a new issue or save to notion/a database.
 * Flow: A flow connects two SaaS APIs. It is triggered by a trigger SaaS event. The flow function processes the event and the flow then calls another SaaS event to perform an action.
 
-In this chapter, we will learn how to automate the SaaS workflow.
+In this chapter, we will learn how to write flow function customizing SaaS workflows.
 
 * [Slack Calculator bot](slack.md)
+* [GitHub App ](github.md)
 * [Save Slack messages to Notion](slack-notion.md)
 * [Send GitHub issues to Slack](github.md)
 * [Send a scheduled email](sendgrid.md)
