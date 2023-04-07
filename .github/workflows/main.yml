@@ -17,22 +17,22 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Build
         run: |
           npm install
           npm run build
 
-      - name: Copy static pages
-        run: |
-          cp -r book dist/
-          cp -r docs dist/
-          cp -r wasm_linux_container dist/
-
-      - name: Publish
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          cname: wasmedge.org
+#      - name: Copy static pages
+#        run: |
+#          cp -r book dist/
+#          cp -r docs dist/
+#          cp -r wasm_linux_container dist/
+#
+#      - name: Publish
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./dist
+#          cname: wasmedge.org
