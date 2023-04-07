@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[195],{2841:(e,t,s)=>{s.r(t),s.d(t,{default:()=>c});var r=s(7294),u=s(6775);function c(){return r.createElement(u.l_,{to:"/docs/category/rust-developers"})}}}]);
