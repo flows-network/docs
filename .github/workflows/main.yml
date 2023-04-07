@@ -24,15 +24,9 @@ jobs:
           npm install
           npm run build
 
-#      - name: Copy static pages
-#        run: |
-#          cp -r book dist/
-#          cp -r docs dist/
-#          cp -r wasm_linux_container dist/
-#
-#      - name: Publish
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_dir: ./dist
-#          cname: wasmedge.org
+      - name: Publish
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          cname: blog.flows.network
