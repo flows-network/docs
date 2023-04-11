@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-test-site.com/blog</id>
     <title>flows.network Docs Blog</title>
-    <updated>2021-08-26T00:00:00.000Z</updated>
+    <updated>2023-04-11T17:00:59.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-test-site.com/blog"/>
     <subtitle>flows.network Docs Blog</subtitle>
     <icon>https://your-docusaurus-test-site.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[This week in flows.network (0403-0407)]]></title>
+        <id>changelog</id>
+        <link href="https://your-docusaurus-test-site.com/blog/changelog"/>
+        <updated>2023-04-11T17:00:59.000Z</updated>
+        <summary type="html"><![CDATA[From April 3rd to April 7th, flows.network has made the following updates:]]></summary>
+        <content type="html"><![CDATA[<p>From April 3rd to April 7th, flows.network has made the following updates:</p><ul><li><p>Supprot rebuilding your flow function mannuly. You can find Rebuild button next to the Deployment Log. As usual, you won't need to rebuild your function. Whether you commit new changes in your code or re-authticate your SaaS integrations, the flows.network platform will automatically build function again. In order to solve some unexpected problems, we add this button. But we hope no one clicks this button.</p></li><li><p>Upgrade OpenAI-flows integration to 0.4 and support <code>retry_time</code> function. This function can ask ChatGPT to retry to answer your question if ChatGPT can't reply to you previouly due to some network issues. See an example in the <a href="https://github.com/flows-network/github-pr-summary/blob/main/src/github-pr-summary.rs#L150" target="_blank" rel="noopener noreferrer">github-pr-summary</a> repo.</p></li></ul>]]></content>
+        <author>
+            <name>release</name>
+        </author>
+        <category label="changelog" term="changelog"/>
+        <category label="product" term="product"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
@@ -51,20 +64,6 @@
             <uri>https://github.com/endiliey</uri>
         </author>
         <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>first-blog-post</id>
-        <link href="https://your-docusaurus-test-site.com/blog/first-blog-post"/>
-        <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Gao Wei</name>
-            <uri>https://github.com/wgao19</uri>
-        </author>
-        <category label="hola" term="hola"/>
         <category label="docusaurus" term="docusaurus"/>
     </entry>
 </feed>
