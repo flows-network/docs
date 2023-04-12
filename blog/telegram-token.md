@@ -5,7 +5,7 @@ authors: helper
 tags: [telegram]
 ---
 
-flows.network supports the Telgeram integration. A Telegram bot token is neceessary thing for building telegram bots.
+To build Telegram bots or automate Telegram-related workflows on the flows.network platform, a Telegram bot token is necessary. flows.network supports [Telegram integration](https://flows.network/integration/Telegram), which enables you to create Telegram bots with ease.
 
 Here's a step-by-step guide on how to get a bot token for Telegram. Then you can use this token to create your own telegram bot.
 
@@ -18,3 +18,5 @@ Here's a step-by-step guide on how to get a bot token for Telegram. Then you can
 > Note that the API token is a unique identifier for your bot, which allows you to send requests to the Telegram Bot API. Make sure to keep this token safe and secure, as anyone with access to this token can potentially control your bot.
 
 In conclusion, getting a bot token for Telegram is a simple process that can be completed with BotFather's help. Once you have the token, you can start building your bot on flows.network.
+
+Next step is to fork the [telegram-gpt](https://github.com/flows-network/telegram-gpt) repo and folow the instrcutions to build your own chatgpt bot.
