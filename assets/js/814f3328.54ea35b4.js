@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"This week in flows.network (0403-0407)","permalink":"/blog/changelog"},{"title":"How to get a Telegram bot token","permalink":"/blog/api-guide"},{"title":"Welcome","permalink":"/blog/welcome"}]}')}}]);
