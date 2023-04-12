@@ -2,7 +2,7 @@
 slug: welcome
 title: Welcome
 authors: [helper]
-tags: [facebook, hello, docusaurus]
+tags: [hello]
 ---
 
 We (flows.network) will use our blog posts to provide updates for flows.network. We use tag to specify blog content. You can find the details below. 
