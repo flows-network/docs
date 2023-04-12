@@ -1,25 +1,17 @@
 ---
 slug: welcome
 title: Welcome
-authors: [slorber, yangshun]
+authors: [helper]
 tags: [facebook, hello, docusaurus]
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+We (flows.network) will use our blog posts to provide updates for flows.network. We use tag to specify blog content. You can find the details below. 
 
-Simply add Markdown files (or folders) to the `blog` directory.
+| Tag name  | description                                                                |
+|-----------|----------------------------------------------------------------------------|
+| changelog | Updates for flows.network in the past week. Published on Monday each week. |
+| products  | New features about flows.network                                           |
+| telegram  | Updates and guide for the Telegram integration.                            |
+| GitHub    | Updates and guide for the GitHub integration.                              |
+| OpenAI    | Updates and guide for the OpenAI integration                               |
 
-Regular blog authors can be added to `authors.yml`.
-
-The blog post date can be extracted from filenames, such as:
-
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
-
-A blog post folder can be convenient to co-locate blog post images:
-
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
-
-The blog supports tags as well!
-
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
