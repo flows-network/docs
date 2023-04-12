@@ -10,8 +10,6 @@ yangshun:
   url: https://github.com/yangshun
   image_url: https://github.com/yangshun.png
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+helper:
+  name: customer service
+
