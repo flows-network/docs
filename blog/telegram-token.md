@@ -1,5 +1,5 @@
 ---
-slug: api-guide
+slug: how-to-get-a-telegram-bot-token
 title: How to get a Telegram bot token
 authors: helper
 tags: [telegram]
