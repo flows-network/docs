@@ -1,6 +1,6 @@
 ---
 slug: build-a-chatgpt-telegram-bot-with-flows-network
-title: “Step-by-Step Guide: Building a Telegram bot for ChatGPT”
+title: Step-by-Step Guide for Building a Telegram bot for ChatGPT
 authors:
   name: guide
   title: Build something awesome together
