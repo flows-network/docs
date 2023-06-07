@@ -1,8 +1,8 @@
 {
   "label": "Getting Started",
-  "position": 1,
+  "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Getting Started with flows.network. In 5 minutes, you will build and deploy a custom workflow that automatically takes new comments in GitHub Issues and forwards them to a Slack channel. You can program the automated workflow in Rust or JavaScript. Pick the language you want to use from below!"
+    "description": "Getting Started with flows.network from a template or from importing your own source code."
   }
 }

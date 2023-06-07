@@ -1,0 +1,8 @@
+{
+  "label": "External SaaS service",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "SaaS Integrations introduction ."
+  }
+}
