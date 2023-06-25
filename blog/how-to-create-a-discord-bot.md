@@ -1,5 +1,5 @@
 ---
-slug: flows-network-update-0407
+slug: discord-bot-guide
 title: How to create a Discord bot
 authors: helper
 tags: [discord]
