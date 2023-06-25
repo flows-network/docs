@@ -1,5 +1,5 @@
 ---
-slug: flows-network-update-0407
+slug: flows-network-update-0525
 title: Changelog flows.network (0525-0407)
 authors:
   name: release
