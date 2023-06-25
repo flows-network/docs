@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[3950],{1473:s=>{s.exports=JSON.parse('{"label":"discord","permalink":"/blog/tags/discord","allTagsPath":"/blog/tags","count":1}')}}]);
