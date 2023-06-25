@@ -7,7 +7,7 @@ tags: [discord]
 
 # How  to create a Discord  server bot
 
-Discord is a great communication tool for the community. Lots of organisations, companies, and open-source projects use Discord as the home of their community. One of the most famous use cases is Midjounry. Lots of people use midjourny to generate unbelievable images with the help of a Discord server bot. In this article, I will show you how to create a Discord server bot and connect the bot with flows.work. This will be helpful when you want to create Discord-related flows.
+Discord is a great communication tool for the community. Lots of organizations, companies, and open-source projects use Discord as the home of their community. One of the most famous use cases is Midjounry. Lots of people use Midjourny to generate unbelievable images with the help of a Discord server bot. In this article, I will show you how to create a Discord server bot and connect the bot with flows.work. This will be helpful when you want to create Discord-related flows.
 
 To connect Discord on flows.network, generally we will need two parameters: `discord_channel_id` and `discord-token`. 
 
@@ -23,7 +23,7 @@ https://discord.com/channels/846973236280950824/846973236280950827
                                                |---channel id-----|
 ```
 
-That’s how we get the Discord channel id.You can use a Discord channel ID to indicate the channel from which the bot should exit.
+That’s how we get the Discord channel id. You can use a Discord channel ID to indicate the channel from which the bot should exit.
 
 
 ## How to get the Discord bot token
@@ -36,14 +36,20 @@ That’s how we get the Discord channel id.You can use a Discord channel ID to i
     2. Open the PRESENCE INTENT, SERVER MEMBERS INTENT, and MESSAGE CONTENT INTENT.
 5. Click on the “Oauth" tab on the left-hand side of the page and click on URL Generator.
     1. On the URL Generator page, select bot in the scope.
-    2. Copy the bot url from the GENERATED RRL in the bottom of this page. This URL is used to invite your bot to your Discord server after your flow is running successfully.
+    2. Copy the bot URL from the GENERATED RRL in the bottom of this page. This URL is used to invite your bot to your Discord server after your flow is running successfully.
 
-After you get the Discord Chanel id and Discord bot token , go to flows.network to create a Discord bot, like the ChatGPT Discord server.
+After you get the Discord Chanel id and Discord bot token, go to flows.network to create a Discord bot, like the ChatGPT Discord server.
 
 
 ## Connect the channel id and Discord token with your bot
 
-The most easiest way to create a discord bot is to get started with a pre-build template. 
+The easiest way to create a discord bot is to get started with a pre-built template. Let’s take the [GitHub Issue Tracker template](https://flows.network/flow/createByTemplate/github-issue-notification-tracker) as an example. After you complete the first step: create and build the flow, you'll be redirected to a page where you need to configure the Discord settings. As you can see from the image below, we need to fill in the Discord channel id and Discord bot token.
+
+
+![](discord-flows.png)
+
+
+When you finish all the steps and your flow turns running, you can invite the bot to your server by the bot URL you just got in the previous step.
 
 
 
