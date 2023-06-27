@@ -1,12 +1,11 @@
 ---
 slug: hacker-news-alert
-title: Never Miss a Beat: Receive alerts for Hacker News posts that you care about
-authors: guide
-tags: [HackNews,Slack]
+title: 'Never Miss a Beat: Receive Alerts for Hacker News Posts that You're Interested In'
+authors:
+  name: guide
+  title: Build something awesome together
+tags: [slack,guide,hackernews]
 ---
-
-# Never Miss a Beat: Receive alerts for Hacker News posts that you care about
-
 
 If you're a hacker who frequents the popular news aggregation site Hacker News, you know how quickly posts can get lost in the shuffle. With hundreds of new stories appearing each day, it can be tough to keep up with the topics that matter most to you. But what if there was a way to be notified anytime a post contained a specific keyword? That's where this article comes in. 
 
