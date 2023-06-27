@@ -93,7 +93,7 @@ const config = {
                 to: '/docs/category/getting-started',
               },
               {
-                label: 'API Reference',
+                label: 'API References',
                 to: '/docs/category/api-references',
               },
             ],
@@ -107,7 +107,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/realwasmedge',
+                href: 'https://twitter.com/flows_network',
               },
             ],
           },
