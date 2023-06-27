@@ -2,7 +2,7 @@
 slug: hacker-news-alert
 title: Never Miss a Beat: Receive alerts for Hacker News posts that you care about
 authors: guide
-tags: [HackNews, Slack]
+tags: [HackNews,Slack]
 ---
 
 # Never Miss a Beat: Receive alerts for Hacker News posts that you care about
@@ -12,7 +12,7 @@ If you're a hacker who frequents the popular news aggregation site Hacker News, 
 
 I will walk you through how to build a bot to automatically send Slack messages if a Hacker News post contains the keyword you are concerned with on [the flows.network platform](https://flows.network/). You can also extend this Hacker News bot to another SaaS platform that flows.network has integrated, like Notion, Discord, Telegram, Airtable, and so on.
 
-![Hacker News Alert](hacker-news-alert-01.png)
+![Hacker News Alert](hacker-news-alert-01.jpg)
 
 ## What is Hacker News
 
@@ -22,7 +22,7 @@ Today, Hacker News has evolved into a popular online community for entrepreneurs
 
 Hacker News can be used as a valuable resource for people interested in keeping up with the latest news and trends in the tech industry. By participating in discussions and sharing content on Hacker News, individuals can gain exposure for their own projects, ideas, and businesses, as well as connect with other like-minded individuals who can offer valuable insights and feedback. 
 
-![Hacker News Alert](hacker-news-alert-02.png)
+![Hacker News Alert](hacker-news-alert-02.jpg)
 
 ## Why we need a tool to  search and monitor the posts of Hacker News
 
