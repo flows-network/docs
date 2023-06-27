@@ -1,9 +1,7 @@
 ---
-slug: hacker-news-alert
-title: 'Never Miss a Beat: Receive Alerts for Hacker News Posts that You're Interested In'
-authors:
-  name: guide
-  title: Build something awesome together
+slug: hacker-news-alert-slack
+title: "Never Miss a Beat: Receive Alerts for Hacker News Posts that You're Interested In"
+authors: guide
 tags: [slack,guide,hackernews]
 ---
 
@@ -56,7 +54,3 @@ Compared with Hacker News RSS, one of the advantages of a Hacker News Slack bot 
 Furthermore, you can also integrate ChatGPT into this Slack bot and ask ChatGPT to summarize all the Hacker News Posts in one day. 
 
 Give it a try now! Join flows.network [Discord](https://discord.com/invite/TrPfq677au) server to get the latest updates or request some features.
-
-
-
-
