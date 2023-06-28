@@ -1,8 +1,0 @@
-{
-  "label": "Rust Developers",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "Follow this guide to create your first flow in 5 minutes! The flow automatically sends new GitHub Issue comments to a Slack channel. This guide is for Rust developers. If you use JavaScript, you can refer to out Getting Started guide in JavaScript."
-  }
-}

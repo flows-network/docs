@@ -76,7 +76,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://flows.network/',
+            href: 'https://flows.network/start',
             label: 'Create a Flow',
             position: 'right',
           },
@@ -89,12 +89,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Rust Developers',
-                to: '/docs/category/rust-developers',
+                label: 'Getting Started',
+                to: '/docs/category/getting-started',
               },
               {
-                label: 'Javascript Developers',
-                to: '/docs/category/javascript-developers',
+                label: 'API References',
+                to: '/docs/category/api-references',
               },
             ],
           },
@@ -107,7 +107,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/realwasmedge',
+                href: 'https://twitter.com/flows_network',
               },
             ],
           },
@@ -116,7 +116,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                href: 'https://wasmedge.org/',
+                href: 'https://flows.network/blog',
               },
               {
                 label: 'GitHub',
