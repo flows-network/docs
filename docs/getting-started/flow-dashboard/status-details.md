@@ -4,16 +4,16 @@ sidebar_position: 1
 
 # Flow status and details
 
-Like I mentioned before, when you create a flow successfully, there will be a flow page showing some details and setting about this flow. In this chapter, I will start with the Flow status and details.
+Like we mentioned before, when you create a flow successfully, there will be a flow page showing some details and setting about this flow. In this chapter, I will start with the Flow status and details.
 
 ## What you can see from the Flow Details page
 
-From up to down, you can see 
+From up to down, you can see
 
 1. Flow Name and its status
-2. Imported GitHub repo: the link of the source code repo for this flow and the status of the function
+2. Imported GitHub repo: the link of the source code repo for this flow and the status of the function. The link is clickable.
 3. Deployment log: the deployment time and build log. If you didn't connect the SaaS integration successfully, there will be an error called `Unregister`. In this case, please check if the SaaS integration is connected successfully.
-4. Connected integrations: the SaaS integrations you authenticated and its details like which GitHub organization and which Slack workspace. We won't show the integrations that don't need authentication, like Lambda, Store, and schedule. The connection with the SaaS integrations is a global parameter, which means you only need to connect the SaaS once.
+4. Connected integrations: the SaaS integrations you authenticated and its details like which GitHub organization and which Slack workspace. We won't show the integrations that don't need authentication here, like Lambda, Store, and schedule. The connection with the SaaS integrations is a global parameter, which means you only need to connect the SaaS once.
 
 ## Flows Status explanation
 

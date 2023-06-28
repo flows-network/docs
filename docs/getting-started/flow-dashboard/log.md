@@ -8,4 +8,4 @@ Log is very helpful to understand the status of a flow, like how many times is t
 
 Convert to the Running log tab, you can see the running log of your flow. To be noted, the level of verbosity of the running log depend on whether and how you use `flowsnet-platform-sdk` crate, which we will show you more details in the Log chapter. 
 
-If you don't use `flowsnet-platform-sdk` crate, there will be no logs.
+If you don't use `flowsnet-platform-sdk` crate in your flow code, there will be no logs.
