@@ -1,6 +1,6 @@
 ---
 slug: flows-network-update-0525
-title: Changelog flows.network (0525-0407)
+title: Changelog flows.network (0525)
 authors:
   name: release
   title: New things about flows.network
