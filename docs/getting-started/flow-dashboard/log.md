@@ -4,8 +4,10 @@ sidebar_position: 1
 
 # Running Log
 
-Log is very helpful to understand the status of a flow, like how many times is the flow is triggered. Especially, log can help debug the problems why the flow doesn't work well.
+The running log provides valuable information about the status of your flow, including the number of times the flow has been triggered. It is especially useful for debugging purposes when your flow is not functioning as expected.
 
-Convert to the Running log tab, you can see the running log of your flow. To be noted, the level of verbosity of the running log depend on whether and how you use `flowsnet-platform-sdk` crate, which we will show you more details in the Log chapter. 
+To access the running log, navigate to the "Running Log" tab. It is important to note that the level of detail in the running log depends on whether and how you utilize the `flowsnet-platform-sdk` crate in your flow code. More information about this can be found in the Log chapter.
 
-If you don't use `flowsnet-platform-sdk` crate in your flow code, there will be no logs.
+If you have not used the `flowsnet-platform-sdk` crate in your flow code, the running log will be empty as there will be no logs generated.
+
+
