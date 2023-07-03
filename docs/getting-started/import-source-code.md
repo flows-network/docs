@@ -1,42 +1,44 @@
 ---
 sidebar_position: 2
 ---
+
 # Bring your own source code
 
-Template is a good way to onboard with flows.network. However, templates can't cover all kinds of use cases. In this case, you can create your own flow function using the wrapped SaaS SDKs and then import and deploy the GitHub Repo that containing your flows code.
+While templates provide a convenient way to get started with flows.network, they may not cover all use cases. In such situations, you can create your own flow function using the wrapped SaaS SDKs and import and deploy a GitHub repository containing your custom code.
 
-In this article, I will walk you through how to create a flow from importing your own source code.
+This article will guide you through the process of creating a flow by importing your own source code.
 
-## Prerequisite
+## Prerequisites
 
-1. A GitHub account to sign with the flows.network platform and clone the template code.
-2. Sign up with the [flows.network](https://flows.network/) platform. It's free.
+1. A GitHub account to sign up for the flows.network platform and clone the template code.
+2. Sign up for the [flows.network](https://flows.network/) platform. It's free.
 
 ## Prepare your code
 
-If you don't have one, you can simply fork the [flows.network/github-pr-summary](https://github.com/flows-network/github-pr-summary) repo. After forking this source code, you can make some code changes to suit your needs, like write `github_owner` and `github_repp` in the code  directly.
+If you don't already have your own code, you can fork the [flows-network/github-pr-summary](https://github.com/flows-network/github-pr-summary) repository. Once you have forked the source code, you can make necessary modifications to suit your requirements. For example, you can directly specify the `github_owner` and `github_repo` values in the code.
 
 ## Import your source code
 
-Open this [page](https://flows.network/flow/new) on your browser.
+Open the [page](https://flows.network/flow/new) in your browser.
 
-When the code is ready，Follow the UI to select the repo where your source code exists.
+When your code is ready, follow the user interface (UI) instructions to select the repository where your source code exists.
 
-> Tips #1: You can search your repo by entering keywords on repo box if you have many GitHub repos.
-> Tips #2: If you want to customize your repo, click Advanced text to see more settings. You can choose the branch and folder and set up some parameters.
+> Tip #1: If you have numerous GitHub repositories, you can search for your repository by entering keywords in the repository search box.
+> Tip #2: If you want to customize your repo, click "Advanced" to access more options. You can choose the branch, folder, and set up additional parameters.
 
-Click Build to build the function you choose.
+Click "Build" to build the chosen function.
 
-## Configure the SaaS integration required by your function
+## Configure the required SaaS integration for your function
 
-Next, we will need to grant flow.network to access the SaaS you will use in this flow.
+Next, you need to grant flows.network access to the SaaS integration required for this flow.
 
-The UI will reminder you which SaaS you should configure.
+The UI will direct you to configure the necessary SaaS integration.
 
-For the [flows.network/github-pr-summary](https://github.com/flows-network/github-pr-summary) repo, we will need to configure OpenAI and GitHub.
+For the [flows-network/github-pr-summary](https://github.com/flows-network/github-pr-summary) repository, you will need to configure OpenAI and GitHub integrations.
 
-Just click the Connect button to open a new authentication page. Once you're done. The Go to the Flow button will turn purple. Click the button to finish the flow.
+Simply click the "Connect" button to open a new authentication page. Once you have completed the authentication process, the "Go to the Flow" button will turn purple. Click the button to complete the flow.
 
-After that, you will be directed to a new page showing the details of the flow you just created.
+Afterward, you will be directed to a new page displaying the details of the flow you just created.
 
-Once the function is ready and the flow is running, you can go to the repo to trigger this bot by creating a PR.
+Once the function is ready and the flow is running, you can go to the repository and trigger the bot by creating a pull request (PR).
+
