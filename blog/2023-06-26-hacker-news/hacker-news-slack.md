@@ -51,6 +51,8 @@ That’s it. After that, you will receive a message if the Hacker News Post cont
 
 Compared with Hacker News RSS, one of the advantages of a Hacker News Slack bot is that the bot can be integrated into the SaaS tools you often use. But with Hacker News RSS, you need to install an extra tool to read the RSS feed.
 
-Furthermore, you can also integrate ChatGPT into this Slack bot and ask ChatGPT to summarize all the Hacker News Posts in one day. 
+Furthermore, you can also integrate ChatGPT into this Slack bot and [ask ChatGPT to summarize all the Hacker News Posts](https://github.com/flows-network/hacker-news-alert-chatgpt-slack/tree/main/).
+
+If you own a community on Discord, check out the Discord version to [monitor Hacker News posts containing the keyword you're interested in and ask ChatGPT to give a summary of each post](https://github.com/flows-network/hacker-news-alert-chatgpt-discord/tree/main/).
 
 Give it a try now! Join flows.network [Discord](https://discord.com/invite/TrPfq677au) server to get the latest updates or request some features.
