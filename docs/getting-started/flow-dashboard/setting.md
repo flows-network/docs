@@ -28,10 +28,10 @@ Tags help you manage your flow. You can add different tags and reuse the existin
 
 After that, you can search for your flow using `#tag_name` on My Flows page.
 
-## Suspend and delete the flow
+## Pause or delete the flow
 
-Under the Danger Zone section, you can suspend and delete your flow.
+Under the Danger Zone section, you can pause or delete your flow.
 
-Suspending a flow is revocable. This action is only applicable when the flow is running. Once suspended, a flow can't be triggered and hence there is no actions.
+Pausing a flow is revocable. This action is only applicable when the flow is running. Once paused, a flow can't be triggered and hence there is no actions.
 
 Deleting a flow is irrevocable. Make sure to double-check before deleting a flow.
