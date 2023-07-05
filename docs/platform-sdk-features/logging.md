@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # logging
 
-The [`flowsnet-platform-sdk` crate](https://crates.io/crates/flowsnet-platform-sdk) offers the ability to add log and debug log for flows.
+The [`flowsnet-platform-sdk` crate](https://crates.io/crates/flowsnet-platform-sdk) offers the ability to print log for flows.
 
 ## Usage
 
@@ -24,7 +24,7 @@ To add logging to your code, follow these steps:
    use flowsnet_platform_sdk::logger;
    ```
 
-3. Inside your `main` function, initialize the logger:
+3. Inside your `run` function, initialize the logger:
    ```rust
    pub async fn run() -> anyhow::Result<()> {
        dotenv().ok();
@@ -33,7 +33,7 @@ To add logging to your code, follow these steps:
    }
    ```
 
-4. Whenever you want to add log information, use the `log::debug!` macro and provide the desired message:
+4. Whenever you want to print log information, use the standard `log` crate and provide the desired message:
    ```rust
    log::debug!("Received payload: PR Synced");
    ```
@@ -42,15 +42,17 @@ That's it! Logging functionality has now been added to your code.
 
 ### Setting up the flow
 
-All the logs will be displayed in the "Running Log" tab, as shown in the accompanying image.
-
-![](flows-log-01.png)
-
-To view the logs, go to the "Settings" tab and scroll down to find the "Configuration" button. Add a new configuration with the name `RUST_LOG` and the value `debug`.
+To enable the log of the corresponding level to be printed, go to the "Settings" tab and scroll down to find the "Configuration" button. Add a new configuration with the name `RUST_LOG` and the value indicating the level you want to print.
+For example, setting the value to `debug` for `log::debug!()` to work in your code.
 
 ![](flows-log-02.png)
 
 Now, whenever the flow is triggered, you can see the detailed logs. Please note that the logs are only saved for the latest three days.
+
+All the logs will be displayed in the "Running Log" tab, as shown in the accompanying image.
+
+![](flows-log-01.png)
+
 
 ## Flows that using the `flowsnet-platform-sdk` crate
 
