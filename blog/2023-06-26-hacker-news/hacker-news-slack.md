@@ -39,9 +39,9 @@ For example, if a post on Hacker News contains ChatGPT, you will receive a messa
 
 > Make sure you have signed up for an account for [flows.network](https://flows.network/).
 
-1. [**Load the Hacker News alert bot template in flows.network****.**](https://flows.network/flow/createByTemplate/hackernews-alert) The template contains the source code for the bot itself. We will clone the source code to your own GitHub account so that you can modify and customize it later. 
+1. [**Load the Hacker News alert bot template in flows.network**.](https://flows.network/flow/createByTemplate/hackernews-alert) The template contains the source code for the bot itself. We will clone the source code to your own GitHub account so that you can modify and customize it later. 
 2. Configure the `KEYWORD`. Input the area that matters to you, like ChatGPT. Only support one keyword right now. After that, click on Create and Deploy. 
-3. **Authorize bot access to Slack.** The `slack_workspace` and `slack_channel` point to the target Slack channel where the bot will send you the ChatGPT related Hacker News Post. Input your Slack workspace and channel here. Next, click on Connect to give the repo the necessary permissions in Slack.
+3. **Authorize bot access to Slack.** The `slack_workspace` and `slack_channel` point to the target Slack channel where the bot will send you the ChatGPT-related Hacker News Post. Input your Slack workspace and channel here. Next, click on Connect to give the repo the necessary permissions in Slack.
 
 [Click here to see how to create a Hacker News Alert Slack bot in three steps.](https://github.com/flows-network/hackernews-alert)
 
