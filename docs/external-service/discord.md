@@ -3,14 +3,14 @@ sidebar_position: 4
 ---
 # Discord
 
-This `Flows Integration` library allows you to create Discord bots hosted on [`Flows Network`](https://flows.network) platform, allowing you to listen to events in your Discord guilds/channels, interact with rich Discord services and build more on top of it.
+The [`discord_flows`](https://docs.rs/discord-flows/) library allows you to create Discord bots hosted on [`Flows Network`](https://flows.network) platform. This allows you to listen to events in your Discord guilds/channels, interact with rich Discord services, and build more on top of it.
 
-Thanks to the solid foundation of [`serenity` crate](https://docs.rs/serenity), based on which much of this library is built, [`discord_flows`](https://crates.io/crates/discord_flows) supports a broad array of Discord API features, please visit the documentation page for more information on what can be done with this library. 
+Thanks to the solid foundation of [`serenity` crate](https://crates.io/crates/serenity), based on which much of this library is built, [`discord_flows`](https://crates.io/crates/discord_flows) supports a broad array of Discord API features, please visit the documentation page for more information on what can be done with this library. 
 
 
 ## Trigger
 
-Built with this library, a `Flows Function` waits for an event to happen on Discord, such as receiving a message, then kicks into action. In the case of our example on this page, the function uses the method `listen_to_event()` to register a listener for incoming messages.
+Built with this library, a `Flows Function` or bot waits for an event to happen on Discord, such as receiving a message, then springs into action. In the case of our example on this page, the function uses the method `listen_to_event()` to register a listener for incoming messages.
 
 
 ## Action
@@ -23,7 +23,6 @@ Once the function receives a trigger, it performs an action. In this case, the f
 Here is a minimal example:
 
 ```rust
-
 use discord_flows::{get_client, listen_to_event, model::Message};
 
 #[no_mangle]

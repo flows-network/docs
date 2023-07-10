@@ -3,16 +3,16 @@ sidebar_position: 3
 ---
 # GitHub 
 
-This `Flows Integration` library allows you to create GitHub automation bots hosted on [Flows Network](https://flows.network/) platform, allowing you to listen to events in your GitHub repositories, interact with rich GitHub services, and build more on top of it.
+The [`github_flows` crate](https://docs.rs/github_flows) enables you to create GitHub automation bots hosted on the [Flows Network](https://flows.network/) platform. This allows you to listen to events in your GitHub repositories, interact with rich GitHub services, and build more complex and tailored solutions on top of these features.
 
-[`Octocrab` crate](https://docs.rs/octocrab) is a popular third party GitHub API client in Rust, we brought it to the serverless world with [`octocrab_wasi` crate](https://docs.rs/octocrab_wasi), and further built [github_flows](https://docs.rs/github_flows) on top of it.
+The [`Octocrab` crate](https://docs.rs/octocrab) is a popular third party GitHub API client in Rust, we brought it to the serverless world with [`octocrab_wasi` crate](https://docs.rs/octocrab_wasi), and further built [github_flows](https://docs.rs/github_flows) on top of it.
 
 This library supports extensive GitHub API features. Please visit the documentation page for more information on what can be done with it.
 
 
 ## Trigger
 
-Built with this library, a `Flows Function`/ a Bot, waits for an event to happen on GitHub, such as a new comment on an issue, then kicks into action. In many cases, these events are GitHub WebHook events, [github_flows](https://docs.rs/github_flows) handles these WebHook payloads, parsing them and passing them on for further actions.
+Built with this library, a `Flows Function` or bot, can listen to events happening on your GitHub or choose to use other triggers like [`schedule_flows`](https://docs.rs/schedule_flows) events, a scheduling feature for running tasks at specified times. Upon receiving a trigger event, such as a new comment on an issue, it executes a pre-defined action or series of actions. In many cases, these events are GitHub WebHook events. [github_flows](https://docs.rs/github_flows) handles these WebHook payloads, parsing them and passing them on for further actions.
 
 In the case of our example on this page, the function uses the method `listen_to_event()` to register a listener for incoming issue comments.
 
@@ -20,12 +20,13 @@ In the case of our example on this page, the function uses the method `listen_to
 ## Action
 
 Once the function receives a trigger, it performs an action. In this case, the function reacts to the issue comment with a rocket emoji. The `handler()` function defines the action to take upon receiving a comment on an issue.
+
+
 ## Recommended flows and templates
 
 Here is a minimal example:
 
 ```rust
-
 use github_flows::{
     get_octo, listen_to_event,
     octocrab::models::{events::payload::EventPayload, reactions::ReactionContent},
@@ -54,7 +55,6 @@ async fn handler(payload: EventPayload) {
     };
 }
 ```
-
 
 
 This code shows a basic bot that listens for incoming issue comments and reacts with a rocket emoji.

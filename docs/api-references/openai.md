@@ -4,4 +4,4 @@ sidebar_position: 5
 
 # ChatGPT
 
-https://docs.rs/openai-flows/0.7.1
+https://docs.rs/openai-flows/

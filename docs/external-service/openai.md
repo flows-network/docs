@@ -4,22 +4,19 @@ sidebar_position: 5
 
 # ChatGPT
 
-The [`openai-flows` crate](https://docs.rs/openai-flows/) supports a wide range of ChatGPT's functionalities on the [`Flows Network`](https://docs.flows.network/docs/) platform.
+ChatGPT has taken the world by storm. It has become the de facto brand name for the family of OpenAI's generative AI services. Our [`openai-flows`](https://docs.rs/openai-flows/) library supports a wide range of OpenAI's natural language processing features on the [`Flows Network`](https://docs.flows.network/docs/) platform.
 
-
-## Overview
-
-This library facilitates natural language conversation, text completion, image generation, and more. It encapsulates the functionalities provided by OpenAI's ChatGPT, enabling the creation of rich, interactive applications hosted on the Flows Network.
+OpenAI's generative AI capabilities can be accessed directly from applications deployed on [`Flows Network`](https://flows.network/) platform, creating new possibilities for hosted applications and taking their perfomrance to the next level.
 
 
 ## Trigger
 
-A `Flows Function` or a bot built with this library sends a user request for Chat, Completions, etc to OpenAI's endpoints and waits for response.
+A `Flows Function` or bot built with the [`openai_flows` crate](https://crates.io/crates/openai-flows) interacts with OpenAI's AI over its chat/completion API. Your conversation/completion request is encapsulated and sent to API endpoints, then the function or bot waits for a response from OpenAI, which contains the generated chat response.
 
 
 ## Action
 
-[`Flows Network`](https://flows.network/) receives OpenAI's response then relays back to the user. The [`openai-flows` crate](https://docs.rs/openai-flows/) supports streaming and non-streaming requests from OpenAI. 
+[`Flows Network`](https://flows.network/) receives the response from OpenAI's endpoint and relays it back to the user. 
 
 
 ## Recommended Flows and Templates
@@ -27,7 +24,6 @@ A `Flows Function` or a bot built with this library sends a user request for Cha
 Here's a basic example demonstrating the usage of this library:
 
 ```rust
-
 use openai_flows::{
     chat::ChatOptions,
     OpenAIFlows,
@@ -69,9 +65,6 @@ async fn handler(_qry: HashMap<String, Value>, body: Vec<u8>) {
 ```
 
 
-
-This sample illustrates a bot that listens for user requests, utilizes the OpenAI `chat_completion` function to generate a conversationally relevant response, and transmits that response back to the user.
-
-For more in-depth information and guidance on utilizing this library, please visit the official documentation page.
+This example illustrates a bot that listens for user requests, utilizes the OpenAI `chat_completion` function to generate a conversationally relevant response, and transmits that response back to the user.
 
 **Note** : The `tokio` used here is `tokio_wasi` with `macros` and `rt` features.

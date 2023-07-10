@@ -3,18 +3,19 @@ sidebar_position: 7
 ---
 # Claude
 
-The [`claude_flows` crate](https://docs.rs/claude_flows)  provides integration with Claude, a conversational AI, allowing you to enrich your flows on the `Flows Network` platform with advanced conversation capabilities. It's easy to generate human-like chat responses using Claude's AI within your flows.
+The [`claude_flows`](https://docs.rs/claude_flows) library provides integration with Claude, a conversational AI, which leads the world's generative AI sector with its 100k context window of claude-100k models.
 
-This library supports Claude's industry leading 100k context window model.
+Claude generative AI service is not generally available yet. Our library provides coverage of its key features, such as chat completion, and claude-100k models. The claude_flows library is currently under active development. Please join our [Discord community](https://discord.com/invite/ccZn9ZMfFf) for updates.
+
 
 ## Trigger
 
-A `Flows Function` responds to a request, acting as the trigger. For our example, the function uses the `request_received()` method to listen for such requests containing a string message.
+A `Flows Function` or bot built with the [`claude_flows` crate](https://crates.io/crates/claude-flows) interacts with Claude's AI over its chat/completion API. Your conversation/completion request is encapsulated and sent to API endpoints, then the function or bot waits for a response from Claude, which contains the generated chat response.
 
 
 ## Action
 
-Upon being triggered by an event, a function performs a corresponding action. In this case, the action is generating a chat response using Claude's conversational AI. The action taken on receiving a request is user-defined.
+[`Flows Network`](https://flows.network/) receives the response from Claude's endpoint and relays it back to the user. 
 
 
 ## Recommended flows and templates
@@ -63,6 +64,4 @@ async fn handler(_qry: HashMap<String, Value>, body: Vec<u8>) {
 }
 ```
 
-
-
-In this program, the function listens for a request containing a string message. Upon receiving such a request, it uses Claude's AI to generate a chat response and sends it back.
+In this program, the Flows Function or bot sends a user request to Claude's endpoint for chat completion. It waits for Claude's response, which contains the generated chat response. The response is then sent back to the user.

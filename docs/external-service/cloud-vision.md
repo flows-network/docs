@@ -3,8 +3,7 @@ sidebar_position: 9
 ---
 # Cloud Vision
 
-
-The [`cloud_vision_flows` crate](https://docs.rs/cloud_vision_flows)  allows you to integrate Google Cloud Vision functionality into your flows on the `Flows Network` platform. You can easily perform actions such as text detection on images using Google Cloud Vision's powerful image analysis capabilities.
+The [`cloud_vision_flows`](https://docs.rs/cloud_vision_flows) library integrates key Google Cloud Vision functionalities into the `Flows Network` platform. You can easily perform tasks such as text detection on images using Google Cloud Vision's powerful image analysis capabilities.
 
 
 ## Trigger
@@ -22,7 +21,6 @@ When a function is triggered by an event, it performs a corresponding action. In
 Here is a minimal example:
 
 ```rust
-
 use cloud_vision_flows::text_detection;
 use lambda_flows::{request_received, send_response};
 

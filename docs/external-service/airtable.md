@@ -3,7 +3,7 @@ sidebar_position: 11
 ---
 # Airtable
 
-The [airtable_flows crate](https://docs.rs/airtable_flows)  enables you to integrate Airtable's spreadsheet-like database capabilities within your flows on the `Flows Network` platform. This crate provides key functions like creating, updating, and searching records in Airtable bases.
+The [`airtable_flows`](https://docs.rs/airtable_flows) library enables you to integrate Airtable's spreadsheet-like database capabilities within your applications on the `Flows Network` platform. This crate provides key functions like creating, updating, and searching records in Airtable bases.
 
 
 ## Trigger
@@ -21,7 +21,6 @@ On being triggered by an event, the function carries out a corresponding action.
 Here's a simple example:
 
 ```rust
-
 use airtable_flows::create_record;
 use slack_flows::{listen_to_channel};
 
