@@ -8,7 +8,7 @@ The running log provides valuable information about the status of your flow, inc
 
 To access the running log, navigate to the "Running Log" tab. It is important to note that the level of detail in the running log depends on whether and how you utilize the `flowsnet-platform-sdk` crate in your flow code. 
 
-![](/docs/integrations/platform-sdk-features/flows-log-01.png)
+![](flows-log-01.png)
 
 If you have not used the `flowsnet-platform-sdk` crate in your flow code, the running log will be empty as there will be no logs generated.
 
