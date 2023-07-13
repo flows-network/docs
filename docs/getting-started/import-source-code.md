@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Bring your own source code
+# Getting started with your own source code
 
 While templates provide a convenient way to get started with flows.network, they may not cover all use cases. In such situations, you can create your own flow function using the wrapped SaaS SDKs and import and deploy a GitHub repository containing your custom code.
 
@@ -26,6 +26,8 @@ When your code is ready, follow the user interface (UI) instructions to select t
 > Tip #1: If you have numerous GitHub repositories, you can search for your repository by entering keywords in the repository search box.
 > Tip #2: If you want to customize your repo, click "Advanced" to access more options. You can choose the branch, folder, and set up additional parameters.
 
+![](source-code-01.png)
+
 Click "Build" to build the chosen function.
 
 ## Configure the required SaaS integration for your function
@@ -35,6 +37,8 @@ Next, you need to grant flows.network access to the SaaS integration required fo
 The UI will direct you to configure the necessary SaaS integration.
 
 For the [flows-network/github-pr-summary](https://github.com/flows-network/github-pr-summary) repository, you will need to configure OpenAI and GitHub integrations.
+
+![template-02.png]
 
 Simply click the "Connect" button to open a new authentication page. Once you have completed the authentication process, the "Go to the Flow" button will turn purple. Click the button to complete the flow.
 

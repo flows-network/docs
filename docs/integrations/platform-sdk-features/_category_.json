@@ -1,0 +1,8 @@
+{
+  "label": "Platform SDK Features",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "flows.network provides some necessary features like logging."
+  }
+}
