@@ -4,11 +4,11 @@ sidebar_position: 2
 
 # State Store
 
-The `store-flows` offers the ability to store key/value. We can build stateful serverless functions in flows.network.
+The [`store-flows` crate](https://docs.rs/store-flows) offers the ability to store key/value. We can build stateful serverless functions in flows.network.
 By enhancing the ability of your flows functions to persist and retrieve data, the library offers a simple way to keep track of state across multiple function invocations.
 
 ## Usage
-The following example offers a taste of what the Store Flows library can do:
+The following example offers a taste of what this library can do:
 
  ```rust
 use serde_json::json;
@@ -50,4 +50,4 @@ The whole document is [here](https://docs.rs/store-flows).
 
 ## Flows that used the `store-flows` crate
 
-* [Integrate ChatGPT into Telegram](https://github.com/flows-network/telegram-gpt). the `store-flows` crate is used to save the conversion of ChatGPT.
+* [Integrate ChatGPT into Telegram](https://github.com/flows-network/telegram-gpt). the `store-flows` crate is used to save the conversation of ChatGPT.

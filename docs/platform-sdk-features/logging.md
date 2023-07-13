@@ -54,7 +54,7 @@ All the logs will be displayed in the "Running Log" tab, as shown in the accompa
 ![](flows-log-01.png)
 
 
-## Flows that using the `flowsnet-platform-sdk` crate
+## Flows that use the `flowsnet-platform-sdk` crate
 
 * [Use ChatGPT to summarize & review GitHub Pull Requests](https://github.com/flows-network/github-pr-summary). The `flowsnet-platform-sdk` crate provides detailed and long time log.
 

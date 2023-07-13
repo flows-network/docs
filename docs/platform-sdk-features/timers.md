@@ -13,13 +13,11 @@ The [`schedule-flows` crate](https://crates.io/crates/schedule-flows) offers the
 
 
 ## Usage
-- [Send Hacker News post to a Slack channel every hour]( https://github.com/flows-network/hackernews-alert). the function will be trigger per hour by the `schedule-flows` crate.
 
-The minimum limit of the `schedule-flows` crate is one hour.
+The minimum interval of events triggered by `schedule-flows` is one hour.
 To use Schedule Flows, import the necessary functions and define the task:
 
 ```rust
-
 use schedule_flows::schedule_cron_job;
 use slack_flows::send_message_to_channel;
 
@@ -36,6 +34,9 @@ pub async fn run() {
 }
 ```
 
-
-
 This example sets up a cron job that sends a message to a Slack channel at 8:50 UTC daily.
+
+
+## Flows that uses the `schedule-flows` crate
+
+- [`Hacker News Alert`]( https://github.com/flows-network/hackernews-alert). This `schedule-flows` function is triggered hourly.
