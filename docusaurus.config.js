@@ -93,8 +93,8 @@ const config = {
                 to: '/docs/category/getting-started',
               },
               {
-                label: 'API References',
-                to: '/docs/category/api-references',
+                label: 'Integrations',
+                to: '/docs/category/integrations',
               },
             ],
           },
