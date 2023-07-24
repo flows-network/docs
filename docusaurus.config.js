@@ -90,11 +90,11 @@ const config = {
             items: [
               {
                 label: 'Getting Started with flow templates',
-                to: '/docs/category/getting-started-templates',
+                to: '/docs/category/getting-started-template',
               },
               {
                 label: 'Getting Started (Developers)',
-                to: '/docs/category/getting-started-developers',
+                to: '/docs/category/getting-started-developer',
               },
               {
                 label: 'Integrations',
