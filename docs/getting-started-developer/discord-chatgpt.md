@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Build a Discord ChatGPT bot
 
-In the previous article, we have learned [how to build a simple Discord bot with flows.network](simple-discord-bot.md). I will show you a more advanced example to see how to customize the bot via the code. If you send the bot "Hello world", the bot will reply to you "Hello world".
+In the previous article, we have learned [how to build a simple Discord bot with flows.network](hello-world-discord.md). I will show you a more advanced example to see how to customize the bot via the code. If you send the bot "Hello world", the bot will reply to you "Hello world".
 
 > We will use configurations (Add a pair of name and value) to configure Discord. The other way is to write them in the code, visit this article for more information.
 
