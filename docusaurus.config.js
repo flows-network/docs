@@ -89,8 +89,12 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Getting Started',
-                to: '/docs/category/getting-started',
+                label: 'Getting Started with flow templates',
+                to: '/docs/category/getting-started-templates',
+              },
+              {
+                label: 'Getting Started (Developers)',
+                to: '/docs/category/getting-started-developers',
               },
               {
                 label: 'Integrations',
