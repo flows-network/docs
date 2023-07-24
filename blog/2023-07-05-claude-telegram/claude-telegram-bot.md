@@ -6,7 +6,7 @@ tags: [telegram,guide,claude]
 ---
 
 
-Recently, [flows.network](https://flows.network/) supports Anthropic's Claude. We talked about [how to build a Telegram ChatGPT bot](https://flows.network/blog/build-a-chatgpt-telegram-bot-with-flows-network). In this guide, I will walk you through the process of building your own Telegram chatbot powered by [Claude](https://www.anthropic.com/index/introducing-claude) in just three minutes using flows.network. You won't need to write any code or manage any servers. All you have to do is click a few buttons and provide some information.
+Recently, [flows.network](https://flows.network/) supports Anthropic's Claude and its newly issued Claude 2 (100k tokens supported). We talked about [how to build a Telegram ChatGPT bot](https://flows.network/blog/build-a-chatgpt-telegram-bot-with-flows-network). In this guide, I will walk you through the process of building your own Telegram chatbot powered by [Claude](https://www.anthropic.com/index/introducing-claude) in just three minutes using flows.network. You won't need to write any code or manage any servers. All you have to do is click a few buttons and provide some information.
 
 With this Claude Telegram chatbot, you can:
 

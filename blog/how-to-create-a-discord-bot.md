@@ -1,15 +1,13 @@
 ---
-slug: discord-bot-guide
-title: How to create a Discord bot
+slug: discord-channel-bot-guide
+title: How to create a Discord channel bot
 authors: helper
 tags: [discord]
 ---
 
-# How  to create a Discord  server bot
+# How  to create a Discord channel bot
 
-Discord is a great communication tool for the community. Lots of organizations, companies, and open-source projects use Discord as the home of their community. One of the most famous use cases is Midjounry. Lots of people use Midjourny to generate unbelievable images with the help of a Discord server bot. In this article, I will show you how to create a Discord server bot and connect the bot with flows.work. This will be helpful when you want to create Discord-related flows.
-
-To connect Discord on flows.network, generally we will need two parameters: `discord_channel_id` and `discord-token`. 
+Discord is a great communication tool for the community. Lots of organizations, companies, and open-source projects use Discord as the home of their community. One of the most famous use cases is Midjounry. Lots of people use Midjourny to generate unbelievable images with the help of a Discord bot. In this article, I will show you how to create a Discord channel bot that can send and receive messages from an external service to a Discord channel. To connect a Discord channel on flows.network, you need two parameters: `discord_channel_id` and `discord_token`. 
 
 ## How to get the Discord channel id
 
