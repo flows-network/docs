@@ -7,4 +7,5 @@ RUN npm run build
 
 FROM node:16.20.1
 COPY --from=build /docs /docs
+WORKDIR /docs
 ENTRYPOINT ["npm", "run", "serve"]
