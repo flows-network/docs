@@ -44,6 +44,11 @@ export default [
 
 	{ text: 'Contribute', header: true, type: 'learn', key: 'contribute' },
 
+	{ text: 'Examples', header: true, type: 'api', key: 'sdk' },
+
+	{ text: 'Hello World Demo', slug: 'examples/hello', key: 'examples/hello' },
+	{ text: 'Discord ChatGPT Demo', slug: 'examples/discord', key: 'examples/discord' },
+
 	{ text: 'Rust Examples', header: true, type: 'api', key: 'sdk' },
 	{ text: 'JavaScript Examples', header: true, type: 'api', key: 'sdk' },
 ] as const;
