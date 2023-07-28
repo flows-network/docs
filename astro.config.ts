@@ -18,7 +18,7 @@ import { remarkFallbackLang } from './plugins/remark-fallback-lang';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://plankton-app-synmz.ondigitalocean.app/',
+	site: 'https://docs.flows.network/',
 	integrations: [
 		AutoImport({
 			imports: [asideAutoImport],
