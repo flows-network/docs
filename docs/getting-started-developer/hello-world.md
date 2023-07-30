@@ -2,48 +2,60 @@
 sidebar_position: 1
 ---
 
-# Hello world example without any integrations
+# Hello world
 
-In this article, I will walk you through how to run a hello world example on flows.network. This flow function exposes an HTTP endpoint. You can submit any data to the endpoint via HTTP POST and the flow function will echo it back to you in the HTTP response.
-
-This example is quite simple and you don't need to authenticate any SaaS integrations.
+In this artile, I will walk you through a very simple flow function. It exposes an HTTP endpoint. You can trigger the flow function by sending an HTTP request to the endpoint, and the flow function will echo back the `msg` parameter in the HTTP response.
 
 ## Prerequisites
 
-You will need a GitHub account to sign up for the [flows.network](https://flows.network/) platform. It's free.
+You will need a GitHub account to log into [flows.network](https://flows.network/). It's free.
 
-## Prepare the code
+## Prepare the source code
 
-Since flows.network requires users to import their flow function code from GitHub, you will need to put your source code under a GitHub repo you have admin access. Usually, your personal GitHub account is a good place to host your code. After you import the function source code, flows.network will build and deploy the source code automatically. Once you have any commits to the repo in the future, flows.network will automatically rebuild the function for you. That's why we call flows.network a serverless platform: developers don't need to care about DevOps.
+Flows.network makes extensive use of GitOps. It uses GitHub to store and manage the source code for all flow functions. You will need to
+put your flow function's source code in a GitHub repo you have admin access to. Usually, your personal GitHub account is a good place to host your code. 
+The build and deploy operations on flows.network are automatically triggered when you push changes to the code in the GitHub repo.
 
-For this tutorial, we already set up [a hello world GitHub repo](https://github.com/flows-network/hello-world) for you to fork. Once you forked successfully, let's go to the next part.
+For this tutorial, we created [a hello world GitHub repo](https://github.com/flows-network/hello-world) for you to fork. 
+Once you forked it into your personal account, let's import it into flows.network.
 
-## Import the source code
+## Import, build and deploy 
 
-Open this [page](https://flows.network/flow/new) to create a flow in your browser.
+[Click here](https://flows.network/flow/new) to import the source code for the flow function into flows.network.
 
-You need to authenticate your GitHub account first. Click the Add new authentication to grant flows.network to access your GitHub repo.
+Click on the **Add new authentication** button to grant flows.network access to your GitHub repos.
 
-Then, choose your own GitHub account under the Organization part and the repo you just forked under the Repository part.
+Next, select your own GitHub account as the Organization, and then select the hello world repo you just forked.
 
-> If you have numerous GitHub repositories, you can search for your repository by entering keywords in the repository search box.
+> If you have many GitHub repos, you can search for any specific repo in the search box.
 
 ![](hello-world-01.png)
 
-After that, click Build to build and deploy the function.
+Next, click on the **Build** button to compile and build the flow function using the source code from the selected GitHub repo.
 
-## Get the endpoint
-
-Next, click on Deploy to proceed with the flow and you will be redirected to the flow details page. You can check the status of your function and get the endpoint URL to make an HTTP response.
+Finally, click on **Deploy** button to deploy the flow function. You will be redirected to the flow details page, where you can check for 
+service status and logs. 
 
 ![](hello-world-02.png)
 
-Once you see the endpoint URL, you can open your terminal and use the following command line to give it a try.
+On the flow details page, you can see how to trigger the flow function. In this case, it is triggered by an incoming HTTP request. 
+The URL endpoint is shown on this page.
+
+## Test it!
+
+You can simply type an HTTP GET URL in your browser to trigger the flow function.
+
+```
+https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
+```
+
+Or, you can open a terminal and send the HTTP request using `curl`.
 
 ```bash
 curl -X POST  https://code.flows.network/lambda/j4DPFGufPr -d "I am a Rustacean"
 ```
-The output will be
+
+The outputs in both cases will be as follows.
 
 ```text
 Welcome to flows.network.
@@ -51,3 +63,45 @@ You just said: 'I am a Rustacean'.
 Learn more at: https://github.com/flows-network/hello-world
 ```
 
+## Code walkthrough
+
+The source code for the flow function is written in the Rust programming language. It is very easy to understand. The `run()` function 
+is called by flows.network when it receives a trigger event. In this case, the trigger is an incoming HTTP request to the flow function's
+URL endpoint.
+
+```rust
+pub async fn run() -> anyhow::Result<()> {
+    request_received(|headers, qry, body| {
+        handler(headers, qry, body)
+    }).await;
+    Ok(())
+}
+```
+
+The `request_received()` function is provided by the flows.network SDK to receive the headers, query parameters, and body of the HTTP
+request. It passes those data to the `handler()` function, which extracts the value for the `msg` query parameter and then sends back an HTTP
+response.
+
+```rust
+async fn handler(headers: Vec<(String, String)>, qry: HashMap<String, Value>, _body: Vec<u8>) {
+    let msg = qry.get("msg").unwrap();
+    let resp = format!("Welcome to flows.network.\nYou just said: '{}'.\nLearn more at: https://github.com/flows-network/hello-world\n", msg);
+
+    send_response(
+        200,
+        vec![(String::from("content-type"), String::from("text/html"))],
+        resp.as_bytes().to_vec(),
+    );
+}
+```
+
+> When the flow function is deployed, the platform calls its `run()`, which calls `request_received()` for the first time. It generates a random URL endpoint and registers the flow function to be triggered by HTTP requests to that endpoint.
+
+The flows.network platform retrieves the Rust source code from your GitHub repo and then compiles it for you. Of course, you can also
+compile it locally by installing the Rust compiler toolchain and then run the command.
+
+```bash
+cargo build --target wasm32-wasi --release
+```
+
+That's it. Now you have learnt the basics of a flow function. Let's create a more useful flow function in the next chapter.

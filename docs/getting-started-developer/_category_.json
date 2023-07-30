@@ -1,8 +1,8 @@
 {
-  "label": "Getting Started with bringing your own code",
+  "label": "Getting Started",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Build a flow from importing your own source code."
+    "description": "Create, build and deploy flow functions."
   }
 }
