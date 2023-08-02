@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'flows.network Docs',
+  title: 'flows.network docs',
   tagline: '',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
@@ -57,7 +57,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'flows.network Docs',
+        title: 'flows.network docs',
         logo: {
           alt: '',
           src: 'img/logo.png',
@@ -89,15 +89,15 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Getting Started with flow templates',
+                label: 'Quick start with templates',
                 to: '/docs/category/getting-started-with-templates',
               },
               {
-                label: 'Getting Started (Developers)',
-                to: '/docs/category/getting-started-with-bringing-your-own-code',
+                label: 'Guides for developers',
+                to: '/docs/category/getting-started',
               },
               {
-                label: 'Integrations',
+                label: 'Access 3rd party services',
                 to: '/docs/category/integrations',
               },
             ],
