@@ -51,6 +51,12 @@ https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
 
 Or, you can open a terminal and send the HTTP request using `curl`.
 
+You can enable POST requests by uncommenting the following line in the `handler()` function
+
+```rust
+let msg = String::from_utf8(body).unwrap_or("".to_string());
+```
+
 ```bash
 curl -X POST  https://code.flows.network/lambda/j4DPFGufPr -d "I am a Rustacean"
 ```
