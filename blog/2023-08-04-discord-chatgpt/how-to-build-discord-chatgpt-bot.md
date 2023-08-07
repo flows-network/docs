@@ -83,7 +83,7 @@ Close the tab and go back to the flow.network page once you are done. Click on t
 
 Once the status of the flow turns ready and running, go back to your Discord server and you can find the bot is online now. DM the bot and the bot will now answer your questions.
 
-![](discord-chatgpt-06.png)
+![](discord-chatgpt-07.png)
 
 ## Conclusion
 
