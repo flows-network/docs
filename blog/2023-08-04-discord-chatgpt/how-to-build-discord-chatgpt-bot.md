@@ -13,7 +13,7 @@ This bot can
 * Channel message responses - The bot can respond to messages posted in channels, allowing all channel members to interact with it.
 * External service integration - Services like OCR can be integrated to expand the bot's functionality. For example, [the bot can process images with OCR](https://docs.rs/cloud-vision-flows/0.1.1/cloud_vision_flows/).
 
-![](discord-chatgpt-05.png)
+![](discord-chatgpt-bot-05.png)
 
 ## 1. Get a Discord Bot Token
 
@@ -40,9 +40,7 @@ To get started, you need to have a Discord account. And then follow these steps:
 
 ## 2. Set up a flows.network Account
 
-
 Now that you have set up your Discord bot account, let's set up a [flows.network](https://flows.network/) account.
-
 
 * Visit the flows.network website and sign up for a new account with your GitHub account.
 
@@ -59,7 +57,6 @@ Click [here](https://flows.network/flow/createByTemplate/discord-chatgpt) to loa
 Click the purple Install and Authorize our GitHub app to grant flows.network to access your GitHub repo. After that, review the system_prompt. You can copy and paste prompts from here. The text you input here decides what the role of the chatbot.
 
 Then, Click Create and Build to process.
-
 
 ### 3.2 Configure the Bot
 
@@ -94,11 +91,7 @@ By following this step-by-step guide, you have learned how to build a ChatGPT Di
 * [Send GitHub issues with specific labels to Discord](https://flows.network/flow/createByTemplate/github-issue-notification-tracker)
 * [Monitor the Hacker News posts that you're interested in and let ChatGPT give a summary of the Post.](https://flows.network/flow/createByTemplate/hacker-news-alert-chatgpt-discord)
 
-
-
-
 ## FAQs
-
 
 **Is flows.network a free platform?** 
 
