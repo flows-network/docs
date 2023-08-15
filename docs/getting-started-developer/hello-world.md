@@ -49,19 +49,27 @@ You can simply type an HTTP GET URL in your browser to trigger the flow function
 https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
 ```
 
-Or, you can open a terminal and send the HTTP request using `curl`.
-
-```bash
-curl -X POST  https://code.flows.network/lambda/j4DPFGufPr -d "I am a Rustacean"
-```
-
-The outputs in both cases will be as follows.
+The output is as follows.
 
 ```text
 Welcome to flows.network.
 You just said: 'I am a Rustacean'.
 Learn more at: https://github.com/flows-network/hello-world
 ```
+
+:::note
+You can enable POST requests by uncommenting the following line in the `handler()` function
+
+```rust
+let msg = String::from_utf8(body).unwrap_or("".to_string());
+```
+
+Then, open a terminal and send the HTTP POST request using `curl`.
+
+```bash
+curl -X POST  https://code.flows.network/lambda/j4DPFGufPr -d "I am a Rustacean"
+```
+:::
 
 ## Code walkthrough
 
