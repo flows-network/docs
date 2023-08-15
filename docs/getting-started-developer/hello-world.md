@@ -43,33 +43,25 @@ The URL endpoint is shown on this page.
 
 ## Test it!
 
-You can simply type an HTTP GET URL in your browser to trigger the flow function.
+You can simply type the webhook URL in your browser to trigger the flow function.
 
 ```
-https://code.flows.network/lambda/j4DPFGufPr?msg=I+am+a+Rustacean
+https://code.flows.network/webhook/5VtSyNi1Vcsd4wQDgmcH?msg=I+am+a+Rustacean
 ```
 
-The output is as follows.
+Or, you can use `curl` to send a HTTP GET request to the webhook URL.
+
+```
+curl https://code.flows.network/webhook/5VtSyNi1Vcsd4wQDgmcH?msg=I+am+a+Rustacean
+```
+
+In both cases, the outputs are as follows.
 
 ```text
 Welcome to flows.network.
 You just said: 'I am a Rustacean'.
 Learn more at: https://github.com/flows-network/hello-world
 ```
-
-:::note
-You can enable POST requests by uncommenting the following line in the `handler()` function
-
-```rust
-let msg = String::from_utf8(body).unwrap_or("".to_string());
-```
-
-Then, open a terminal and send the HTTP POST request using `curl`.
-
-```bash
-curl -X POST  https://code.flows.network/lambda/j4DPFGufPr -d "I am a Rustacean"
-```
-:::
 
 ## Code walkthrough
 
@@ -110,6 +102,20 @@ compile it locally by installing the Rust compiler toolchain and then run the co
 
 ```bash
 cargo build --target wasm32-wasi --release
+```
+
+## An exercise
+
+You can enable POST requests by uncommenting the following line in the `handler()` function.
+
+```rust
+let msg = String::from_utf8(body).unwrap_or("".to_string());
+```
+
+Commit and push to GitHub. Wait for the flow function to build and become ready again. Open a terminal and send the HTTP POST request to the webhook using `curl`.
+
+```bash
+curl -X POST https://code.flows.network/webhook/5VtSyNi1Vcsd4wQDgmcH -d "I am a Rustacean"
 ```
 
 That's it. Now you have learnt the basics of a flow function. Let's create a more useful flow function in the next chapter.
