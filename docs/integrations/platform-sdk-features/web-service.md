@@ -8,7 +8,7 @@ The [`webhook_flows`](https://docs.rs/webhook-flows/latest/webhook_flows/) libra
 
 
 ## Usage
-### Creating a Lambda Service
+### Creating a Webhook Service
 
 In this example, we'll show you how to create a webhook service that scrapes a webpage and returns the scraped text.
 
@@ -67,9 +67,9 @@ After you've uploaded your repository to `Flows Network` to compile, you'll get 
 That's it! Your webhook service is now ready. When called with an HTTP request containing a URL as a query parameter, it will scrape the webpage at that URL and return the scraped text.
 
 
-## Flows that use the `lambda_flows` crate 
+## Flows that use the `webhook_flows` crate 
 
-- [`lambda-airtable`](https://github.com/flows-network/lambda-airtable/tree/master) . The `lambda_flows` crate is used to create a webhook service that collects user input from a form (Name, Notes), and sends this data to a predefined Airtable base and table.
+- [`webhook-airtable`](https://github.com/flows-network/webhook-airtable) . The `webhook_flows` crate is used to create a webhook service that collects user input from a form (Name, Notes), and sends this data to a predefined Airtable base and table.
 
 Please note that for these services to interact with the outside world, the calling party needs to make an HTTP request to the flow function hosted on the platform. The function will process the request and return the results back to the calling party.
 
