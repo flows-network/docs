@@ -54,26 +54,29 @@ After the bot joined your server, you can find the bot on the right contact list
 
 ## Code walkthrough
 
-The source code for the flow function is written in the Rust programming language. The `run()` function
-is called by flows.network when it receives a trigger event. In this case, the trigger is a message received by the Discord bot 
-designated by the `discord_token` setting in the `env`.
+The source code for the flow function is written in the Rust programming language. 
+The `on_deploy()` function is called by the flows.network platform when the flow is first deployed.
+We create a `bot` from the `discord_token` and then call `bot.listen_to_messages()` to start up a 
+listener in flows.network to listen for incoming messages from the bot.
 
 ```rust
-pub async fn run() -> anyhow::Result<()> {
-    let discord_token = std::env::var("discord_token").unwrap();
-    let bot = ProvidedBot::new(discord_token);
-    bot.listen(|msg| handler(&bot, msg)).await;
-    Ok(())
+pub async fn on_deploy() {
+    let token = std::env::var("discord_token").unwrap();
+    let bot = ProvidedBot::new(token);
+    bot.listen_to_messages().await;
 }
 ```
 
-The `bot.listen()` function is provided by the flows.network SDK to receive the Discord message.
-It passes the message to the `handler()` function, which 
-determines whether it should reply, and if so, sends the response.
+The `handler()` function is annotated with `#[message_handler]`, which is a macro defined in the Discord SDK.
+It is called by the flows.network platform whenever the bot listener receives a Discord message.
+The flows.network platform passes the `Message` struct, also defined in the Discord SDK, to the `handler()` function.
 
 ```rust
-async fn handler(bot: &ProvidedBot, msg: Message) {
+#[message_handler]
+async fn handler(msg: Message) {
     logger::init();
+    let token = std::env::var("discord_token").unwrap();
+    let bot = ProvidedBot::new(token);
     let discord = bot.get_client();
 
     if msg.author.bot {
@@ -96,8 +99,6 @@ async fn handler(bot: &ProvidedBot, msg: Message) {
     ).await;
 }
 ```
-
-> When the flow function is deployed, the platform calls its `run()`, which calls `bot.listen()` for the first time. It registers the flow function to be triggered by incoming messages from the `bot`.
 
 The flows.network platform retrieves the Rust source code from your GitHub repo and then compiles it for you. Of course, you can also
 compile it locally by installing the Rust compiler toolchain and then run the command.
