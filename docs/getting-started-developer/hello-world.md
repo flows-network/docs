@@ -65,24 +65,25 @@ Learn more at: https://github.com/flows-network/hello-world
 
 ## Code walkthrough
 
-The source code for the flow function is written in the Rust programming language. It is very easy to understand. The `run()` function 
-is called by flows.network when it receives a trigger event. In this case, the trigger is an incoming HTTP request to the flow function's
-URL endpoint.
+The source code for the flow function is written in the Rust programming language. It is very easy to understand. 
+The `on_deploy()` function is called by the flows.network platform when the flow is first deployed.
+We call `create_endpoint()` from the webhook SDK here to ask the flows.network platform to create a new webhook
+endpoint URL for this flow. In this case, the webhook endpoint created by the platform at `on_deploy()` is 
+the above mentioned `https://code.flows.network/webhook/5VtSyNi1Vcsd4wQDgmcH`.
 
 ```rust
-pub async fn run() -> anyhow::Result<()> {
-    request_received(|headers, qry, body| {
-        handler(headers, qry, body)
-    }).await;
-    Ok(())
+pub async fn on_deploy() {
+    create_endpoint().await;
 }
 ```
 
-The `request_received()` function is provided by the flows.network SDK to receive the headers, query parameters, and body of the HTTP
-request. It passes those data to the `handler()` function, which extracts the value for the `msg` query parameter and then sends back an HTTP
-response.
+The `handler()` function is annotated with `#[request_handler]`, which is a macro defined in the webhook SDK.
+It is called by the flows.network platform whenever the webhook receives an HTTP request.
+The flows.network platform passes the HTTP headers, query parameters, and body to the `handler()` function. 
+
 
 ```rust
+#[request_handler]
 async fn handler(headers: Vec<(String, String)>, qry: HashMap<String, Value>, _body: Vec<u8>) {
     let msg = qry.get("msg").unwrap();
     let resp = format!("Welcome to flows.network.\nYou just said: '{}'.\nLearn more at: https://github.com/flows-network/hello-world\n", msg);
@@ -95,8 +96,6 @@ async fn handler(headers: Vec<(String, String)>, qry: HashMap<String, Value>, _b
 }
 ```
 
-> When the flow function is deployed, the platform calls its `run()`, which calls `request_received()` for the first time. It generates a random URL endpoint and registers the flow function to be triggered by HTTP requests to that endpoint.
-
 The flows.network platform retrieves the Rust source code from your GitHub repo and then compiles it for you. Of course, you can also
 compile it locally by installing the Rust compiler toolchain and then run the command.
 
@@ -106,7 +105,7 @@ cargo build --target wasm32-wasi --release
 
 ## An exercise
 
-You can enable POST requests by uncommenting the following line in the `handler()` function.
+You can enable POST requests by using the following line in the `handler()` function to receive the request body.
 
 ```rust
 let msg = String::from_utf8(body).unwrap_or("".to_string());
