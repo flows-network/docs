@@ -115,7 +115,7 @@ async fn handler(ac: ApplicationCommandInteraction) {
     let options = &ac.data.options;
 // Listen to the slash command
     match ac.data.name.as_str() {
-        "wether" => {
+        "weather" => {
             let city = match options
                 .get(0)
                 .expect("Expected city option")
