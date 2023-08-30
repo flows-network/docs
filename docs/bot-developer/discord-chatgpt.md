@@ -150,10 +150,10 @@ so that you can deliver a fully customized experience for your bot users.
 
 ## Read more
 
-Tutorials and sample code for related flow functions. Click on the **Deploy** link to [configure and deploy your own flow without writing any code from a template](../getting-started-template).
+Tutorials and sample code for related flow functions. Click on the **Deploy** link to [configure and deploy your own flow without writing any code from a template](../category/getting-started-template).
 
-* Discord bot with ChatGPT [Tutorial](discord-gpt) | [Code](https://github.com/flows-network/discord-chatgpt/) | [Deploy](https://flows.network/flow/createByTemplate/discord-chatgpt)
-* Telegram bot with ChatGPT [Tutorial](telegram-gpt) | [Code](https://github.com/flows-network/telegram-gpt) | [Deploy](https://flows.network/flow/createByTemplate/Telegram-ChatGPT)
-* Slack bot with ChatGPT [Tutorial](slack-gpt) | [Code](https://github.com/flows-network/slack-chatgpt) | [Deploy](https://flows.network/flow/createByTemplate/Slack-Chatgpt)
-* GitHub comment bot with ChatGPT [Tutorial](github-gpt) | [Code](https://github.com/flows-network/chatgpt-github-app)
+* Discord bot with ChatGPT [Tutorial](discord-chatgpt) | [Code](https://github.com/flows-network/discord-chatgpt/) | [Deploy](https://flows.network/flow/createByTemplate/discord-chatgpt)
+* Telegram bot with ChatGPT [Tutorial](telegram-chatgpt) | [Code](https://github.com/flows-network/telegram-gpt) | [Deploy](https://flows.network/flow/createByTemplate/Telegram-ChatGPT)
+* Slack bot with ChatGPT [Tutorial](slack-chatgpt) | [Code](https://github.com/flows-network/slack-chatgpt) | [Deploy](https://flows.network/flow/createByTemplate/Slack-Chatgpt)
+* GitHub comment bot with ChatGPT [Tutorial](github-chatgpt) | [Code](https://github.com/flows-network/chatgpt-github-app)
 
