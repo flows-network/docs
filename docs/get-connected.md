@@ -1,10 +1,10 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Get Connected
 
-There are several ways to get in touched:
+There are several ways to get in touch:
 
 * [Join our Discord server](https://discord.com/invite/ccZn9ZMfFf)
 * [Follow us on Twitter](https://twitter.com/flows_network)

@@ -1,8 +1,0 @@
-{
-  "label": "AI as a service",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Flow functions that provide AI as web services."
-  }
-}
