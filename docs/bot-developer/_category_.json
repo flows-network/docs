@@ -1,0 +1,8 @@
+{
+  "label": "ChatGPT bots",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Flow functions that connect ChatGPT to bots."
+  }
+}
