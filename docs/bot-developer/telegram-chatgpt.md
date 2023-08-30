@@ -8,7 +8,7 @@ In this article, I will show you how to create a flow function that incorporates
 You can chat with it in a conversation. All the bot answers come from ChatGPT. You can change the ChatGPT prompt in the bot's source code
 for the bot to take on different personalities. 
 
-> You can also [create the Telegram bot through a flow template](../getting-started-template/telegram-chatgpt). The template is an easy-to-use no-code solution, but it is also less flexible.
+> You can also [create the Telegram bot through a flow template](https://flows.network/flow/createByTemplate/Telegram-ChatGPT). The template is an easy-to-use no-code solution, but it is also less flexible.
 
 ## Prerequisites
 
@@ -135,7 +135,7 @@ so that you can deliver a fully customized experience for your bot users.
 
 ## Read more
 
-Tutorials and sample code for related flow functions. Click on the **Deploy** link to [configure and deploy your own flow without writing any code from a template](../category/getting-started-template).
+Tutorials and sample code for related flow functions. Click on the **Deploy** link to [configure and deploy your own flow without writing any code from a template](../category/getting-started-with-templates).
 
 * Discord bot with ChatGPT [Tutorial](discord-chatgpt) | [Code](https://github.com/flows-network/discord-chatgpt/) | [Deploy](https://flows.network/flow/createByTemplate/discord-chatgpt)
 * Telegram bot with ChatGPT [Tutorial](telegram-chatgpt) | [Code](https://github.com/flows-network/telegram-gpt) | [Deploy](https://flows.network/flow/createByTemplate/Telegram-ChatGPT)
