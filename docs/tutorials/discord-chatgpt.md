@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # A Discord bot powered by ChatGPT
@@ -82,8 +82,8 @@ as the bot can be in multiple conversations at the same time.
 #[message_handler]
 async fn handler(msg: Message) {
     let token = env::var("discord_token").unwrap();
-    let placeholder_text = &env::var("placeholder").unwrap_or("Typing ...".to_string());
-    let system_prompt = &env::var("system_prompt").unwrap_or("You are a helpful assistant answering questions on Discord.".to_string());
+    let placeholder_text = env::var("placeholder").unwrap_or("Typing ...".to_string());
+    let system_prompt = env::var("system_prompt").unwrap_or("You are a helpful assistant answering questions on Discord.".to_string());
 
     let bot = ProvidedBot::new(token);
     let discord = bot.get_client();
@@ -94,7 +94,7 @@ async fn handler(msg: Message) {
     let placeholder  = discord.send_message(
         channel_id.into(),
         &serde_json::json!({
-            "content": placeholder_text
+            "content": &placeholder_text
         }),
     ).await.unwrap();
 ```
@@ -128,7 +128,7 @@ The conversation history is cached under the key `channel_id`.
     let co = ChatOptions {
         model: ChatModel::GPT35Turbo,
         restart: restart,
-        system_prompt: Some(system_prompt),
+        system_prompt: Some(&system_prompt),
         ..Default::default()
     };
 
@@ -147,3 +147,13 @@ The conversation history is cached under the key `channel_id`.
 
 As you can see, the flow function gives you fine-grained control over the interactions between Discord and ChatGPT
 so that you can deliver a fully customized experience for your bot users.
+
+## Read more
+
+Tutorials and sample code for related flow functions. Click on the **Deploy** link to [configure and deploy your own flow without writing any code from a template](../category/getting-started-with-templates).
+
+* Discord bot with ChatGPT [Tutorial](discord-chatgpt) | [Code](https://github.com/flows-network/discord-chatgpt/) | [Deploy](https://flows.network/flow/createByTemplate/discord-chatgpt)
+* Telegram bot with ChatGPT [Tutorial](telegram-chatgpt) | [Code](https://github.com/flows-network/telegram-gpt) | [Deploy](https://flows.network/flow/createByTemplate/Telegram-ChatGPT)
+* Slack bot with ChatGPT [Tutorial](slack-chatgpt) | [Code](https://github.com/flows-network/slack-chatgpt) | [Deploy](https://flows.network/flow/createByTemplate/Slack-Chatgpt)
+* GitHub comment bot with ChatGPT [Tutorial](github-chatgpt) | [Code](https://github.com/flows-network/chatgpt-github-app)
+

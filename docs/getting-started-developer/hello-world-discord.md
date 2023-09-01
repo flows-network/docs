@@ -89,7 +89,7 @@ async fn handler(msg: Message) {
     }
 
     let channel_id = msg.channel_id;
-    let resp = format!("Welcome to flows.network.\nYou just said: '{}'.\nLearn more at: https://github.com/flows-network/hello-world\n", msg.content);
+    let resp = format!("Welcome to flows.network.\nYou just said: '{}'.\n", msg.content);
 
     _ = discord.send_message(
         channel_id.into(),
@@ -106,3 +106,13 @@ compile it locally by installing the Rust compiler toolchain and then run the co
 ```bash
 cargo build --target wasm32-wasi --release
 ```
+
+## Read more
+
+Tutorials and sample code for related flow functions. Click on the **Deploy** link to [configure and deploy your own flow without writing any code from a template](../category/getting-started-with-templates).
+
+* Discord bot with ChatGPT [Tutorial](../tutorials/discord-chatgpt) | [Code](https://github.com/flows-network/discord-chatgpt/) | [Deploy](https://flows.network/flow/createByTemplate/discord-chatgpt)
+* Telegram bot with ChatGPT [Tutorial](../tutorials/telegram-chatgpt) | [Code](https://github.com/flows-network/telegram-gpt) | [Deploy](https://flows.network/flow/createByTemplate/Telegram-ChatGPT)
+* Slack bot with ChatGPT [Tutorial](../tutorials/slack-chatgpt) | [Code](https://github.com/flows-network/slack-chatgpt) | [Deploy](https://flows.network/flow/createByTemplate/Slack-Chatgpt)
+* GitHub comment bot with ChatGPT [Tutorial](../tutorials/github-chatgpt) | [Code](https://github.com/flows-network/chatgpt-github-app)
+

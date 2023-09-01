@@ -13,10 +13,11 @@ A Discord chat bot is a bot user that can receive and respond to private message
 4. Click on the "Bot" tab on the left panel.
     1. Click the "Reset Token" button to get the `discord_token`. **Write down the token and keep it safe!**
     2. Turn on the "PRESENCE INTENT", "SERVER MEMBERS INTENT", and "MESSAGE CONTENT INTENT" settings.
-5. Click on the “Oauth2" tab on the left panel
+5. Click on the "OAuth" tab on the left panel
     1. Click on "URL Generator".
     2. Select the "bot" scope.
-    3. Get the bot URL from the GENERATED URL in the bottom of this page.
+    3. Select the "administrator" permission (or select message reading and sending permissions individually as you need).
+    4. Get the bot URL from the GENERATED URL in the bottom of this page.
 7. Finally, use the bot URL from the last step to invite the bot into any of your Discord servers. 
 
 Once you connect a flow function to the bot (via the `discord_token`), all users in the Discord server will be able to message the bot and mention / reply to it in channels.
