@@ -4,11 +4,9 @@ sidebar_position: 4
 
 # Integrate Webhook with Discord
 
-In the previous article, we introduced a simple echo Discord bot and a Discord chatbot based on ChatGPT.
+In this article, I will show you how to use **slash commands** to interact with your Discord bot based on an external web service. Specifically, this flow function is a weather inquiry bot. When you type /weather + the city name, the bot will respond to you with the weather information of this city.
 
-In this article, I will show you how to use **slash commands** to interact with your Discord bot based on a normal webhook URL. Specifically, this flow function is a weather inquiry bot. When you type /weather + the city name, the bot will respond to you with the weather information of this city.
-
-![](webhook-discord.png)
+![](discord-slash-command.png)
 
 ## Prerequisites
 1. A GitHub account to log into the [flows.network](https://flows.network/) platform. It's free.
@@ -16,7 +14,7 @@ In this article, I will show you how to use **slash commands** to interact with 
 
 ## Prepare the source code
 
-For this tutorial, we already created [a repo named `discord-webhook-demo`](https://github.com/flows-network/discord-webhook-demo) for you to fork.
+For this tutorial, we already created [a repo named `discord-api-demo`](https://github.com/flows-network/discord-api-demo) for you to fork.
 
 ## Import and build
 
@@ -67,7 +65,7 @@ pub async fn on_deploy() {
         .await;
 }
 ```
-The `handle()` function is annotated with `#[message_handler]`. It is called when the bot receives a message. It calls send_message() on the client to send a message `msg.content` back to the same channel.
+The `handle()` function is annotated with `#[message_handler]`. It is called when the bot receives a message. It calls `send_message()` on the client to send a message `msg.content` back to the same channel.
 
 ```
 #[message_handler]
@@ -91,7 +89,7 @@ async fn handle(msg: Message) {
 }
 ```
 
-Next, the `handler` function is annotated with `#[application_command_handler]`. If the input matches a "/weather" command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the content to the channel. 
+Next, the `handler` function is annotated with `#[application_command_handler]`. If the input matches a `/weather` command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the content to the channel. 
 
 ```
 #[application_command_handler]
