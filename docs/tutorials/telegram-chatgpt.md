@@ -117,11 +117,11 @@ The conversation history is cached under the key `chat_id`.
 ```rust
 let mut openai = OpenAIFlows::new();
 openai.set_retry_times(3);
-let mut co = ChatOptions {
-    model: ChatModel::GPT35Turbo,
-    restart: false,
-    system_prompt: Some(&system_prompt),
-};
+
+let mut co = ChatOptions::default();
+co.model = ChatModel::GPT35Turbo16K;
+co.restart = false;
+co.system_prompt = Some(&system_prompt);
 
 match openai.chat_completion(&chat_id.to_string(), &text, &co).await {
     Ok(r) => {
