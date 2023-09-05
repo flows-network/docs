@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Integrate Webhook with Discord
 
-In this article, I will show you how to use **slash commands** to interact with your Discord bot based on an external web service. Specifically, this flow function is a weather inquiry bot. When you type /weather + the city name, the bot will respond to you with the weather information of this city.
+In this article, I will show you how to use **slash commands** to interact with your Discord bot based on an external web service. Specifically, this flow function is a weather inquiry bot. When you type `/weather` + the city name, the bot will respond to you with the weather information of this city.
 
 ![](discord-slash-command.png)
 
@@ -20,14 +20,14 @@ For this tutorial, we already created [a repo named `discord-api-demo`](https://
 
 [Click here](https://flows.network/flow/new) to import your forked source code repo for the flow function into flows.network.
 
-For this flow function, we need to add a Discord token and the channel id in settings so that it can listen for messages on a designated channel from a specific Discord bot.
-Please refer to [How to create a Discord chat bot](https://flows.network/blog/discord-chat-bot-guide) on how to get your Discord token and refer to [How to get Discord channel id](https://flows.network/blog/#how-to-get-the-discord-channel-id) for the channel id.
+For this flow function, we need to add a Discord token and a bot id in settings so that it can listen for messages from a specific Discord bot.
+Please refer to [How to create a Discord chat bot](https://flows.network/blog/discord-chat-bot-guide) on how to get your Discord token.
 Click on the **Advanced** link to configure the settings.
 
 | Name             | Value                                                                                       |
 | ---------------- | ------------------------------------------------------------------------------------------- |
 | discord_token    | Copied from Discord Developer Portal                                                        |
-| discord_channel_id | Copied from Discord channel link  |
+| bot_id | Copied from Discord Developer Portal -- General information -- Application ID  |
 
 Click on the **Build** button to create the flow function.
 
@@ -45,51 +45,44 @@ After the bot joins your server, you can find the bot on the right online contac
 
 ## Code walkthrough
 
-The source code for the flow function is written in the Rust programming language. 
-The `on_deploy()` function is called by the flows.network platform when the flow is deployed. We start a listener for
-the designated bot in `on_deploy()`. 
+The source code for the flow function is written in the Rust programming language.  Let's start with how to register a slash command for a bot.
+
+
+let's dive into how to register a slash command for a bot. The following code registers a slash command `weather` for a Discord bot with the `register_commands` function using Discord's HTTP API.
 
 ```
-pub async fn on_deploy() {
-    logger::init();
+async fn register_commands() {
+
+    let bot_id = env::var("bot_id").unwrap_or("1124137839601406013".to_string());
+ // the details of a slash command
+    let command = serde_json::json!({
+        "name": "weather",
+        "description": "Get the weather for a city",
+        "options": [
+            {
+                "name": "city",
+                "description": "The city to lookup",
+                "type": 3,
+                "required": true
+            }
+        ]
+    });
+
     let discord_token = env::var("discord_token").unwrap();
-    let bot = ProvidedBot::new(&discord_token);
+    let http_client = HttpBuilder::new(discord_token)
+        .application_id(bot_id.parse().unwrap())
+        .build();
 
-    register_commands().await;
-
-    bot.listen_to_messages().await;
-
-    let channel_id = env::var("discord_channel_id").unwrap_or("channel_id not found".to_string());
-    let channel_id = channel_id.parse::<u64>().unwrap();
-    bot.listen_to_application_commands_from_channel(channel_id)
-        .await;
-}
-```
-The `handle()` function is annotated with `#[message_handler]`. It is called when the bot receives a message. It calls `send_message()` on the client to send a message `msg.content` back to the same channel.
-
-```
-#[message_handler]
-async fn handle(msg: Message) {
-    logger::init();
-    let discord_token = std::env::var("discord_token").unwrap();
-    let bot = ProvidedBot::new(&discord_token);
-
-    if msg.author.bot {
-        return;
+    match http_client
+        .create_global_application_command(&command)
+        .await
+    {
+        Ok(_) => log::info!("Successfully registered command"),
+        Err(err) => log::error!("Error registering command: {}", err),
     }
-    let client = bot.get_client();
-    _ = client
-        .send_message(
-            msg.channel_id.into(),
-            &serde_json::json!({
-                "content": msg.content,
-            }),
-        )
-        .await;
 }
 ```
-
-Next, the `handler` function is annotated with `#[application_command_handler]`. If the input matches a `/weather` command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the content to the channel. 
+Now we have registered a slash command `weather` for the discord bot. Next, let's see how to listen for a slash command. The `handler` function is annotated with `#[application_command_handler]`. If the input matches a `/weather` command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the content to the channel. 
 
 ```
 #[application_command_handler]
@@ -152,67 +145,9 @@ async fn handler(ac: ApplicationCommandInteraction) {
     }
 }
 ```
- 
-Now Let's walk through the `get_weather` function. This is the core function of this weather inquiry bot. It makes OpenWeatherMap's API call to retrieve weather data for a given city and return the result. It will deserialize the response vector into an `ApiResult` struct using `serde_json`.
 
-```
-// inquiry the weather in `{city}`
-fn get_weather(city: &str) -> Option<ApiResult> {
-    let mut writer = Vec::new();
-    let api_key = env::var("API_KEY").unwrap_or("fake_api_key".to_string());
-    let query_str = format!(
-        "https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={api_key}"
-    );
 
-    let uri = Uri::try_from(query_str.as_str()).unwrap();
-    match Request::new(&uri).method(Method::GET).send(&mut writer) {
-        Err(_e) => log::error!("Error getting response from weather api: {:?}", _e),
+After receiving a slash command `/weather`, the function will call the `get_weather` function via HTTP. It's not the core part of this guide, you can also [check out the weather inquiry function](https://github.com/flows-network/discord-api-demo/blob/main/src/lib.rs#L140-L166). You also can refer to the Acess external web service guide.
 
-        Ok(res) => {
-            if !res.status_code().is_success() {
-                log::error!("weather api http error: {:?}", res.status_code());
-                return None;
-            }
-            match serde_json::from_slice::<ApiResult>(&writer) {
-                Err(_e) => log::error!("Error deserializing weather api response: {:?}", _e),
-                Ok(w) => {
-                    log::info!("Weather: {:?}", w);
-                    return Some(w);
-                }
-            }
-        }
-    };
-    None
-}
-```
 
-Finally, let's dive into how to register a slash command for a bot. The following code registers a slash command `weather` for a Discord bot with the `discord_token` using Discord's HTTP API.
-
-```
-async fn register_commands() {
-    let command = serde_json::json!({
-        "name": "weather",
-        "description": "Get the weather for a city",
-        "options": [
-            {
-                "name": "city",
-                "description": "The city to lookup",
-                "type": 3,
-                "required": true
-            }
-        ]
-    });
-
-    let discord_token = env::var("discord_token").unwrap();
-    let http_client = HttpBuilder::new(discord_token).build();
-
-    match http_client
-        .create_global_application_command(&command)
-        .await
-    {
-        Ok(_) => log::info!("Successfully registered command"),
-        Err(err) => log::error!("Error registering command: {}", err),
-    }
-}
-```
 You also need to structure the output data format, refer to this [snippet](https://github.com/flows-network/discord-webhook-demo/blob/main/src/lib.rs#L119-L140) for more information.
