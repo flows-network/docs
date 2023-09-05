@@ -45,10 +45,7 @@ After the bot joins your server, you can find the bot on the right online contac
 
 ## Code walkthrough
 
-The source code for the flow function is written in the Rust programming language.  Let's start with how to register a slash command for a bot.
-
-
-let's dive into how to register a slash command for a bot. The following code registers a slash command `weather` for a Discord bot with the `register_commands` function using Discord's HTTP API.
+The source code for the flow function is written in the Rust programming language.  Let's start with how to register a slash command for a bot. The following code registers a slash command `weather` for a Discord bot with the `register_commands` function using Discord's HTTP API.
 
 ```
 async fn register_commands() {
@@ -146,8 +143,7 @@ async fn handler(ac: ApplicationCommandInteraction) {
 }
 ```
 
-
-After receiving a slash command `/weather`, the function will call the `get_weather` function via HTTP. It's not the core part of this guide, you can also [check out the weather inquiry function](https://github.com/flows-network/discord-api-demo/blob/main/src/lib.rs#L140-L166). You also can refer to the Acess external web service guide.
+After receiving a slash command `/weather`, the function will call the `get_weather` function via HTTP. It's not the core part of this guide, you can [check out the weather inquiry function](https://github.com/flows-network/discord-api-demo/blob/main/src/lib.rs#L140-L166). You also can refer to the Acess external web service guide.
 
 
 You also need to structure the output data format, refer to this [snippet](https://github.com/flows-network/discord-webhook-demo/blob/main/src/lib.rs#L119-L140) for more information.
