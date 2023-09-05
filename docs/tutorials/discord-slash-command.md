@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Integrate Webhook with Discord
+# Discord slash command
 
 In this article, I will show you how to use **slash commands** to interact with your Discord bot based on an external web service. Specifically, this flow function is a weather inquiry bot. When you type `/weather` + the city name, the bot will respond to you with the weather information of this city.
 
