@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 # Access external web services
 
-In this article, I will show you how to create a flow function that responds to events from external services with the webhook flows. This flow function retrieves real-time weather data for specific cities using the OpenWeatherMap API and serves it through an asynchronous webhook endpoint. 
+In this article, I will show you how to create a flow function that responds to events from external services with the webhook flows. This flow function retrieves real-time weather data for specific cities and serves it through an asynchronous webhook endpoint. 
 
 ## Prerequisites
 
@@ -33,6 +33,8 @@ Finally, you will be redirected to the flow details page, where you can check fo
 service status and logs.
 
 ## Test it!
+
+![](webhook.png)
 
 When the status of the flow is ready and running, you can see a link under the Webhook Endpoint. Copy and paste this URL to your browser and add `?city=cityname` to look up the weather of the city  you want to know.
 
