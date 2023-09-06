@@ -79,7 +79,7 @@ async fn register_commands() {
     }
 }
 ```
-Now we have registered a slash command `weather` for the discord bot. Next, let's see how to listen for a slash command. The `handler` function is annotated with `#[application_command_handler]`. If the input matches a `/weather` command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the content to the channel. 
+Now we have registered a slash command. It is shown on the Discord UI when the user tries to send a message to the bot. When the user sends a slash command to the bot, we need to capture and handle it in our application. Next, let's see how to listen for a slash command. The `handler` function is annotated with `#[application_command_handler]`. If the input matches a `/weather` command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the content to the channel. 
 
 ```
 #[application_command_handler]
