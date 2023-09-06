@@ -2,7 +2,7 @@
 slug: how-to-get-a-telegram-bot-token
 title: How to get a Telegram bot token
 authors: helper
-tags: [telegram]
+tags: [telegram,integration guide]
 ---
 
 To build Telegram bots or automate Telegram-related workflows on the flows.network platform, a Telegram bot token is necessary. flows.network supports [Telegram integration](https://flows.network/integration/Telegram), which enables you to create Telegram bots with ease.
