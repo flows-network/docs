@@ -2,7 +2,7 @@
 slug: discord-channel-bot-guide
 title: How to create a Discord channel bot
 authors: helper
-tags: [discord]
+tags: [discord,integration guide]
 ---
 
 # How  to create a Discord channel bot

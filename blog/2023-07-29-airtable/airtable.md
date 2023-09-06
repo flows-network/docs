@@ -2,7 +2,7 @@
 slug: airtable
 title: "How to connect Airtable on flows.network"
 authors: guide
-tags: [airtable,guide]
+tags: [airtable,integration guide]
 ---
 
 # How to connect Airtable on flows.network
