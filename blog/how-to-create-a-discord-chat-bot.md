@@ -2,7 +2,7 @@
 slug: discord-chat-bot-guide
 title: How to create a Discord chat bot
 authors: helper
-tags: [discord, integration guide]
+tags: [discord,integration guide]
 ---
 
 A Discord chat bot is a bot user that can receive and respond to private messages, as well as channel messages that specifically mention or reply to the bot user. In order to connect a flow function with a Discord chat bot, you will need a `discord_token`.
