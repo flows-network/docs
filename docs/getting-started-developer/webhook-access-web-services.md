@@ -8,7 +8,7 @@ In this article, I will show you how to create a flow function that responds to 
 ## Prerequisites
 
  1. A GitHub account to log into the [flows.network](https://flows.network/) platform. It's free.
- 2. An [OpenWeatherMap API](https://openweathermap.org/api) to access the weather. 
+ 2. An [OpenWeatherMap API key](https://openweathermap.org/api) to query the weather information.. 
 
 ## Prepare the source code
 
@@ -38,11 +38,15 @@ service status and logs.
 
 When the status of the flow is ready and running, you can see a link under the Webhook Endpoint. Copy and paste this URL to your browser and add `?city=cityname` to look up the weather of the city  you want to know.
 
+For example, you can use this link to inquire about the weather in Austin.
+
+https://code.flows.network/webhook/EmkeFZOrR4uRxeKBFiCK?city=Austin
+
 ## Code walkthrough
 
 The source code for the flow function is written in the Rust programming language. 
 
-### Initialize webhook 
+### Initialize the webhook
 
 The `#[tokio::main(flavor = "current_thread")]` annotation indicates that this function is the program's asynchronous entry point running on current thread. In `on_deploy` function, the webhook endpoint is created and set to listen for incoming calls.
 
@@ -55,15 +59,57 @@ pub async fn on_deploy() {
 ```
 
 ### Handle the request
-The handler annotated with `#[request_handler]` will handle the incoming HTTP request. The function first fetches the "city" query parameter, then calls `get_weather` to retrieve weather data for the specified city. 
+The handler annotated with `#[request_handler]` will handle the incoming HTTP request. The function first fetches the "city" query parameter, then calls `get_weather` to retrieve weather data for the specified city. If the city matches, the result will be returned in the HTTP response by the flow function.
 
 ```rust
 #[request_handler]
 async fn handler(_headers: Vec<(String, String)>, _subpath: String, qry: HashMap<String, Value>, _body: Vec<u8>) {
-    ...
+// fetch the city query parameter
+    let city = qry.get("city").unwrap_or(&Value::Null).as_str();
+// call the `get_weather` function and retrieve the weather data
+    let resp = match city {
+        Some(c) => get_weather(c).map(|w| {
+            format!(
+                "Today: {},
+Low temperature: {} °C,
+High temperature: {} °C,
+Wind Speed: {} km/h",
+                w.weather
+                    .first()
+                    .unwrap_or(&Weather {
+                        main: "Unknown".to_string()
+                    })
+                    .main,
+                w.main.temp_min as i32,
+                w.main.temp_max as i32,
+                w.wind.speed as i32
+            )
+        }),
+        None => Err(String::from("No city in query")),
+    };
+
+//Send the result in HTTP Response
+    match resp {
+        Ok(r) => send_response(
+            200,
+            vec![(
+                String::from("content-type"),
+                String::from("text/html; charset=UTF-8"),
+            )],
+            r.as_bytes().to_vec(),
+        ),
+        Err(e) => send_response(
+            400,
+            vec![(
+                String::from("content-type"),
+                String::from("text/html; charset=UTF-8"),
+            )],
+            e.as_bytes().to_vec(),
+        ),
+    }
 }
 ```
-### Fetch Weather Data
+### Fetch the weather data
 
 The `get_weather` function makes a GET request to the OpenWeatherMap API and returns a `Result` with the weather information if successful or an error message string if not.
 
@@ -85,7 +131,7 @@ fn get_weather(city: &str) -> Result<ApiResult, String> {
 }
 ```
 
-### Data Structures
+### Data structure
 
 These structures are used to deserialize the JSON response from the OpenWeatherMap API:
 
