@@ -117,10 +117,13 @@ async fn handler(ac: ApplicationCommandInteraction) {
 // Send the result to the channel
             let resp_inner = match get_weather(&city) {
                 Some(w) => format!(
-                    r#"Today: {},
-                Low temperature: {} °C,
-                High temperature: {} °C,
-                Wind Speed: {} km/h"#,
+                     r#"
+Today in {}
+{},
+Low temperature: {} °C,
+High temperature: {} °C,
+Wind Speed: {} km/h"#,
+                    city,
                     w.weather
                         .first()
                         .unwrap_or(&Weather {
