@@ -27,6 +27,15 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-85B8CW1R8E',
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
