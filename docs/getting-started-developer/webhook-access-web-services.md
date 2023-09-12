@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 # Access external web services
 
-In this article, I will show you how to create a flow function that responds to events from external services with the webhook flows. This flow function retrieves real-time weather data for specific cities and serves it through an asynchronous webhook endpoint. 
+In this article, I will show you how to create a flow function that responds to events from external services with the webhook flows. This flow function provides a webhook. When an HTTP request is received on the webhook, the flow function makes an HTTP request to an external web service to retrieve real-time weather data for a specified city. 
 
 ## Prerequisites
 
@@ -28,7 +28,6 @@ Click on the **Advanced** link to configure the settings.
 
 Next, click on the **Build** and **Deploy** buttons to create the flow function.
 
-
 Finally, you will be redirected to the flow details page, where you can check for
 service status and logs.
 
@@ -36,7 +35,7 @@ service status and logs.
 
 ![](webhook.png)
 
-When the status of the flow is ready and running, you can see a link under the Webhook Endpoint. Copy and paste this URL to your browser and add `?city=cityname` to look up the weather of the city  you want to know.
+When the status of the flow is ready and running, you can see a link in the Webhook Endpoint section. Copy and paste this URL to your browser and add `?city=cityname` to look up the weather of the city  you want to know.
 
 For example, you can use this link to inquire about the weather in Austin.
 
@@ -48,7 +47,7 @@ The source code for the flow function is written in the Rust programming languag
 
 ### Initialize the webhook
 
-The `#[tokio::main(flavor = "current_thread")]` annotation indicates that this function is the program's asynchronous entry point running on current thread. In `on_deploy` function, the webhook endpoint is created and set to listen for incoming calls.
+The `on_deploy()` function creates the webhook endpoint. It listens for incoming HTTP requests.
 
 ```rust
 #[no_mangle]
@@ -59,14 +58,16 @@ pub async fn on_deploy() {
 ```
 
 ### Handle the request
-The handler annotated with `#[request_handler]` will handle the incoming HTTP request. The function first fetches the "city" query parameter, then calls `get_weather` to retrieve weather data for the specified city. If the city matches, the result will be returned in the HTTP response by the flow function.
+
+The `handler()` function annotated with `#[request_handler]` will handle the incoming HTTP request. The function first fetches the `city` query parameter, then calls `get_weather` to retrieve weather data for the specified city. The result will be returned in the HTTP response.
 
 ```rust
 #[request_handler]
 async fn handler(_headers: Vec<(String, String)>, _subpath: String, qry: HashMap<String, Value>, _body: Vec<u8>) {
-// fetch the city query parameter
+    // Get the city query parameter
     let city = qry.get("city").unwrap_or(&Value::Null).as_str();
-// call the `get_weather` function and retrieve the weather data
+
+    // Call the `get_weather` function and retrieve the weather data
     let resp = match city {
         Some(c) => get_weather(c).map(|w| {
             format!(
@@ -88,7 +89,7 @@ Wind Speed: {} km/h",
         None => Err(String::from("No city in query")),
     };
 
-//Send the result in HTTP Response
+    //Send the result in HTTP Response
     match resp {
         Ok(r) => send_response(
             200,
@@ -109,9 +110,10 @@ Wind Speed: {} km/h",
     }
 }
 ```
+
 ### Fetch the weather data
 
-The `get_weather` function makes a GET request to the OpenWeatherMap API and returns a `Result` with the weather information if successful or an error message string if not.
+The `get_weather` function makes a GET request to the OpenWeatherMap API and returns a `Result` with the weather information if successful or an error message string if not. The `request` struct is from the `http_req` crate. It performs the HTTP request to the external OpenWeatherMap API service.
 
 ```
 fn get_weather(city: &str) -> Result<ApiResult, String> {
