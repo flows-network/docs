@@ -4,11 +4,12 @@ sidebar_position: 4
 
 # Discord slash command
 
-In this article, I will show you how to use **slash commands** to interact with your Discord bot based on an external web service. Specifically, this flow function is a weather inquiry bot. When you type `/weather` + the city name, the bot will respond to you with the weather information of this city.
+In this article, I will show you how to use **slash commands** to interact with your Discord bot. Specifically, this flow function is a weather inquiry bot. When you type `/weather` + the city name, the bot will respond to you with the weather information of this city.
 
 ![](discord-slash-command.png)
 
 ## Prerequisites
+
 1. A GitHub account to log into the [flows.network](https://flows.network/) platform. It's free.
 2. A Discord server that you have permission to add a bot.
 
@@ -35,23 +36,41 @@ In the next screen, you will be asked to connect to Discord. Since we are provid
 
 ## Deploy
 
-Finally, you will be redirected to the flow details page, where you can check for service status and logs. Discord and OpenAI should appear as connected external services on this page.
+Finally, you will be redirected to the flow details page, where you can check for service status and logs. Discord should appear as a connected service on this page.
 
 When the status of the flow is ready and running, you can invite the Discord bot to your server.
 
 > Refer to this guide to [invite the bot to your server](https://flows.network/blog/discord-chat-bot-guide).
 
-After the bot joins your server, you can find the bot on the right online contact list. Then you can go to the specific channel and type /weather + name to give it a try.
+After the bot joins your server, you can find the bot on the right online contact list. Then you can go to the specific channel and type `/weather` + city name to give it a try.
 
 ## Code walkthrough
 
-The source code for the flow function is written in the Rust programming language.  Let's start with how to register a slash command for a bot. The following code registers a slash command `weather` for a Discord bot with the `register_commands` function using Discord's HTTP API.
+The `on_deploy()` function is called the flows.network platform when the flow function is deployed.
 
+* It registers slash commands on the designated Discord bot.
+* It creates a listener on the flows.network servers to listen for these slash commands.
+* It creates a listener on the flows.network servers to listen for messages to the designated Discord bot.
+
+```rust
+pub async fn on_deploy() {
+    logger::init();
+    let discord_token = env::var("discord_token").unwrap();
+    let bot = ProvidedBot::new(&discord_token);
+
+    register_commands().await;
+    bot.listen_to_application_commands().await;
+
+    bot.listen_to_messages().await;
+}
 ```
-async fn register_commands() {
 
+The `register_commands()` function registers a slash command `weather` for a Discord bot using Discord's HTTP API.
+
+```rust
+async fn register_commands() {
     let bot_id = env::var("bot_id").unwrap_or("1124137839601406013".to_string());
- // the details of a slash command
+    // the details of a slash command
     let command = serde_json::json!({
         "name": "weather",
         "description": "Get the weather for a city",
@@ -79,9 +98,10 @@ async fn register_commands() {
     }
 }
 ```
-Now we have registered a slash command. It is shown on the Discord UI when the user tries to send a message to the bot. When the user sends a slash command to the bot, we need to capture and handle it in our application. Next, let's see how to listen for a slash command. The `handler` function is annotated with `#[application_command_handler]`. If the input matches a `/weather` command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the content to the channel. 
 
-```
+Now we have registered a slash command. It is shown on the Discord UI when the user tries to send a message to the bot. When the user sends a slash command to the bot, we need to capture and handle it in our flow function. Next, let's see how to listen for a slash command. The `handler` function is annotated with `#[application_command_handler]`. If the input matches a `/weather` command, it will extract the `city` option from the command arguments and then call the `get_weather()` function to look up weather data for the given city. Finally, it will send the response back to the bot in the same channel it received the slash command from.
+
+```rust
 #[application_command_handler]
 async fn handler(ac: ApplicationCommandInteraction) {
     logger::init();
@@ -101,7 +121,8 @@ async fn handler(ac: ApplicationCommandInteraction) {
         )
         .await;
     let options = &ac.data.options;
-// Listen to the slash command
+
+    // Listen to the slash command
     match ac.data.name.as_str() {
         "weather" => {
             let city = match options
@@ -114,7 +135,8 @@ async fn handler(ac: ApplicationCommandInteraction) {
                 CommandDataOptionValue::String(s) => s,
                 _ => panic!("Expected string for city"),
             };
-// Send the result to the channel
+
+            // Send the result to the channel
             let resp_inner = match get_weather(&city) {
                 Some(w) => format!(
                      r#"
@@ -146,7 +168,4 @@ Wind Speed: {} km/h"#,
 }
 ```
 
-After receiving a slash command `/weather`, the function will call the `get_weather` function via HTTP. It's not the core part of this guide, you can [check out the weather inquiry function](https://github.com/flows-network/discord-api-demo/blob/main/src/lib.rs#L140-L166). You also can refer to the Acess external web service guide.
-
-
-You also need to structure the output data format, refer to this [snippet](https://github.com/flows-network/discord-webhook-demo/blob/main/src/lib.rs#L119-L140) for more information.
+After receiving a slash command `/weather`, the function will call the `get_weather()` function, which in turns makes an HTTP call to an external web service. You can [check out the weather inquiry function](https://github.com/flows-network/discord-api-demo/blob/main/src/lib.rs#L140-L166). You also can refer to the Acess external web service guide for more details.
