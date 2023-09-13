@@ -19,4 +19,5 @@ Here's a step-by-step guide on how to get a bot token for Telegram. Then you can
 
 In conclusion, getting a bot token for Telegram is a simple process that can be completed with BotFather's help. Once you have the token, you can start building your bot on flows.network.
 
-Next step is to fork the [telegram-gpt](https://github.com/flows-network/telegram-gpt) repo and folow the instrcutions to build your own chatgpt bot.
+
+Next step is to read the [telegram-gpt](https://github.com/flows-network/telegram-gpt) repo and follow the instructions to build your own chatgpt bot.
