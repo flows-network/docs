@@ -9,6 +9,8 @@ To build Telegram bots or automate Telegram-related workflows on the flows.netwo
 
 Here's a step-by-step guide on how to get a bot token for Telegram. Then you can use this token to create your own telegram bot.
 
+![](telegram-token.png)
+
 1. Open Telegram on your device or web browser and search for the "BotFather" account [@BotFather](https://t.me/BotFather).
 2. Start a chat with the BotFather and type "/newbot" to create a new bot. BotFather will ask for a name and username for your bot.
 3. Choose a name and username for your bot. The name can be anything you like but the username must end with "bot". For example, the name can be "FlowsNetworkBot" and the username can be "@flowsnetworkbot".
