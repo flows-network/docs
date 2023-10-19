@@ -20,6 +20,7 @@ For this tutorial, we already created [a repo named `weather-lookup`](https://gi
 
 For this flow function, we need to add an OpenWeatherMap API key.
 Click on the **Advanced** link to configure the settings.
+
 | Name             | Value                                 |
 | ---------------- | ------------------------------------- |
 | API_KEY    | Copied from OpenWeatherMap  |
