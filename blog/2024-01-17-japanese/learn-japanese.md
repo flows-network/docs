@@ -1,7 +1,7 @@
 ---
 slug: telegram
 title: "Developing a LLM App at Ease with Rust"
-authors: mileyfu
+authors: guide
 tags: [llm,telegram, bot]
 ---
 
