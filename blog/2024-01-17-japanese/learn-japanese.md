@@ -1,8 +1,8 @@
 ---
-slug: airtable
+slug: telegram
 title: "Developing a LLM App at Ease with Rust"
 authors: mileyfu
-tags: [airtable,integration guide]
+tags: [llm,telegram, bot]
 ---
 
 
